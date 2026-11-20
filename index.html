@@ -6,8 +6,9 @@
     <meta name="theme-color" content="#1a1a2e">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>BioRadio - 109 Stations</title>
+    <title>BioRadio - Live Radio</title>
     <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="bioradio-logo.svg">
     <link rel="icon" type="image/png" href="bioradio-logo.png">
     <link rel="apple-touch-icon" href="bioradio-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -196,6 +197,8 @@
         .station-card.playing { border-color: var(--accent); background: rgba(126, 211, 33, 0.08); box-shadow: 0 0 20px rgba(126, 211, 33, 0.1); }
         .station-card.playing::before { opacity: 1; }
         .station-card.filtered-out { display: none !important; }
+        .station-card.offline { opacity: 0.55; }
+        .station-card.offline .freq::after { content: " • offline"; color: #ff6b6b; }
 
         /* ===== STATION LOGO ===== */
         .station-logo {
@@ -478,7 +481,7 @@
                             
                         </div>
                     </div>
-                    <div class="station-card" data-url="https://stream.zeno.fm/8e5w9v8zsy8uv" data-name="Radio Jambo" data-country="Kenya">
+                    <div class="station-card" data-url="https://radiojambo-atunwadigital.streamguys1.com/radiojambo" data-name="Radio Jambo" data-country="Kenya">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%28188%20.5%20.5%29%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23a8edea%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fed6e3%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3EJA%3C%2Ftext%3E%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1001,7 +1004,7 @@
                     <span class="count">3 stations</span>
                 </div>
                 <div class="stations-grid">
-                    <div class="station-card" data-url="https://stream.zeno.fm/9y6r8p5wng0uv" data-name="Nigeria Info FM" data-country="Nigeria">
+                    <div class="station-card" data-url="https://nigeriainfofmlagos993-atunwadigital.streamguys1.com/nigeriainfofmlagos993" data-name="Nigeria Info FM" data-country="Nigeria">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%28248%20.5%20.5%29%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23a8edea%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fed6e3%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3EME%3C%2Ftext%3E%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1021,7 +1024,7 @@
                             
                         </div>
                     </div>
-                    <div class="station-card" data-url="https://stream.zeno.fm/9y6r8p5wng0uv" data-name="Beat FM Lagos" data-country="Nigeria">
+                    <div class="station-card" data-url="https://beatfmlagos-atunwadigital.streamguys1.com/beatfmlagos" data-name="Beat FM Lagos" data-country="Nigeria">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%2817%20.5%20.5%29%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23667eea%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23764ba2%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3EBL%3C%2Ftext%3E%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1062,7 +1065,7 @@
 
                         </div>
                     </div>
-                    <div class="station-card" data-url="https://stream.zeno.fm/rdz541uzs4zuv" data-name="Radio Okapi" data-country="DR Congo">
+                    <div class="station-card" data-url="https://servidor30-5.brlogic.com:7090/live" data-name="Radio Okapi" data-country="DR Congo">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2096%2096%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20gradientTransform=%22rotate%28260%20.5%20.5%29%22%3E%3Cstop%20offset=%220%25%22%20stop-color=%22%23667eea%22/%3E%3Cstop%20offset=%22100%25%22%20stop-color=%22%23764ba2%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%2296%22%20height=%2296%22%20rx=%2224%22%20fill=%22url%28%23g%29%22/%3E%3Ctext%20x=%2248%22%20y=%2260%22%20text-anchor=%22middle%22%20fill=%22white%22%20font-family=%22Arial%2CHelvetica%2Csans-serif%22%20font-weight=%22900%22%20font-size=%2234%22%20letter-spacing=%22-1%22%3EOK%3C/text%3E%3C/svg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1113,7 +1116,7 @@
                             
                         </div>
                     </div>
-                    <div class="station-card" data-url="https://tunein.streamguys1.com/cnn" data-name="CNN Radio" data-country="United States">
+                    <div class="station-card" data-url="https://tunein.cdnstream1.com/2868_96.mp3" data-name="CNN Radio" data-country="United States">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%0A%20%20%20%20%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%28305%20.5%20.5%29%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2343e97b%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2338f9d7%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%20%20%20%20%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3ERU%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1123,7 +1126,7 @@
                             
                         </div>
                     </div>
-                    <div class="station-card" data-url="https://tunein.streamguys1.com/msnbc" data-name="MSNBC Radio" data-country="United States">
+                    <div class="station-card" data-url="https://tunein.cdnstream1.com/3511_96.mp3" data-name="MSNBC Radio" data-country="United States">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%0A%20%20%20%20%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%2872%20.5%20.5%29%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fad0c4%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23ffd1ff%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%20%20%20%20%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3ENY%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1173,7 +1176,7 @@
                             
                         </div>
                     </div>
-                    <div class="station-card" data-url="https://stream.revma.ihrhls.com/zc1499" data-name="WABC Talk Radio" data-country="United States">
+                    <div class="station-card" data-url="https://playerservices.streamtheworld.com/api/livestream-redirect/WABCAM.mp3" data-name="WABC Talk Radio" data-country="United States">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%28234%20.5%20.5%29%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ff9a9e%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fecfef%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3EWS%3C%2Ftext%3E%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1233,7 +1236,7 @@
                             
                         </div>
                     </div>
-                    <div class="station-card" data-url="https://stream.revma.ihrhls.com/zc1519" data-name="WBZ NewsRadio" data-country="United States">
+                    <div class="station-card" data-url="https://stream.revma.ihrhls.com/zc7729" data-name="WBZ NewsRadio" data-country="United States">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%28234%20.5%20.5%29%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ff9a9e%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fecfef%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3EK6%3C%2Ftext%3E%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1263,7 +1266,7 @@
                             
                         </div>
                     </div>
-                    <div class="station-card" data-url="https://tunein.streamguys1.com/bloomberg" data-name="Bloomberg Radio" data-country="United States">
+                    <div class="station-card" data-url="https://tunein.cdnstream1.com/3521_96.mp3" data-name="Bloomberg Radio" data-country="United States">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%0A%20%20%20%20%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%28161%20.5%20.5%29%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23a18cd1%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fbc2eb%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%20%20%20%20%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3EWN%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1273,7 +1276,7 @@
                             
                         </div>
                     </div>
-                    <div class="station-card" data-url="https://www.101smoothjazz.com/101-smoothjazz.m3u" data-name="101 Smooth Jazz" data-country="United States">
+                    <div class="station-card" data-url="https://jking.cdnstream1.com/b22139_128mp3" data-name="101 Smooth Jazz" data-country="United States">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%28202%20.5%20.5%29%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2330cfd0%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23330867%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3EK1%3C%2Ftext%3E%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1354,7 +1357,7 @@
                             
                         </div>
                     </div>
-                    <div class="station-card" data-url="https://playerservices.streamtheworld.com/api/livestream-redirect/CKNWAMAAC.aac" data-name="CKNW News Talk 980" data-country="Canada">
+                    <div class="station-card" data-url="https://corus.leanstream.co/CKNWAM-MP3?type=.mp3&amp;playertype=dplayer" data-name="CKNW News Talk 980" data-country="Canada">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%28348%20.5%20.5%29%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23f093fb%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f5576c%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3ECO%3C%2Ftext%3E%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1749,7 +1752,7 @@
                     <span class="count">10 stations</span>
                 </div>
                 <div class="stations-grid">
-                    <div class="station-card" data-url="https://live-radio01.mediahubaustralia.com/NEW/mp3/" data-name="ABC News Radio" data-country="Australia">
+                    <div class="station-card" data-url="https://abc.streamguys1.com/live/newsradio/icecast.audio" data-name="ABC News Radio" data-country="Australia">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%2883%20.5%20.5%29%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23a8edea%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fed6e3%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3ER1%3C%2Ftext%3E%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1759,7 +1762,7 @@
                             
                         </div>
                     </div>
-                    <div class="station-card" data-url="https://live-radio01.mediahubaustralia.com/RN/mp3/" data-name="ABC Radio National" data-country="Australia">
+                    <div class="station-card" data-url="https://abc.streamguys1.com/live/rnnsw/icecast.audio" data-name="ABC Radio National" data-country="Australia">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%28321%20.5%20.5%29%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fa709a%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fee140%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3EN1%3C%2Ftext%3E%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1789,7 +1792,7 @@
                             
                         </div>
                     </div>
-                    <div class="station-card" data-url="https://playerservices.streamtheworld.com/api/livestream-redirect/KIISFM.aac" data-name="KIIS 106.5 Sydney" data-country="Australia">
+                    <div class="station-card" data-url="https://ais-arn.streamguys1.com/au_007_icy" data-name="KIIS 106.5 Sydney" data-country="Australia">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%0A%20%20%20%20%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%28135%20.5%20.5%29%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23FF6B6B%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23FF8E53%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%20%20%20%20%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3ESD%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1819,7 +1822,7 @@
                             
                         </div>
                     </div>
-                    <div class="station-card" data-url="https://live-radio01.mediahubaustralia.com/774/mp3/" data-name="ABC Melbourne" data-country="Australia">
+                    <div class="station-card" data-url="https://streaming.abc-cdn.net.au/audio/hls/localmelbourne.m3u8?source=web" data-name="ABC Melbourne" data-country="Australia">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%28117%20.5%20.5%29%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fad0c4%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23ffd1ff%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3ER2%3C%2Ftext%3E%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1860,7 +1863,7 @@
                     <span class="count">5 stations</span>
                 </div>
                 <div class="stations-grid">
-                    <div class="station-card" data-url="https://radionz-ice.streamguys.com/national.mp3" data-name="RNZ National" data-country="New Zealand">
+                    <div class="station-card" data-url="https://radionz.streamguys1.com/national/national/national/national-mainstream/chunks.m3u8" data-name="RNZ National" data-country="New Zealand">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%28345%20.5%20.5%29%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23FF6B6B%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23FF8E53%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3EAM%3C%2Ftext%3E%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1870,7 +1873,7 @@
                             
                         </div>
                     </div>
-                    <div class="station-card" data-url="https://ais-nzme.streamguys1.com/nz_002_aac" data-name="Newstalk ZB Auckland" data-country="New Zealand">
+                    <div class="station-card" data-url="https://playerservices.streamtheworld.com/api/livestream-redirect/NZME_01AAC.aac" data-name="Newstalk ZB Auckland" data-country="New Zealand">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%28221%20.5%20.5%29%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23a18cd1%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fbc2eb%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3EDE%3C%2Ftext%3E%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1880,7 +1883,7 @@
                             
                         </div>
                     </div>
-                    <div class="station-card" data-url="https://digitalstreams.mediaworks.nz/edge_net/playlist.m3u8" data-name="The Edge" data-country="New Zealand">
+                    <div class="station-card" data-url="https://digitalstreams.mediaworks.nz/edge_net_icy" data-name="The Edge" data-country="New Zealand">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%28194%20.5%20.5%29%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23e0c3fc%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%238ec5fc%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3EED%3C%2Ftext%3E%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1890,7 +1893,7 @@
                             
                         </div>
                     </div>
-                    <div class="station-card" data-url="https://ais-nzme.streamguys1.com/nz_003_aac" data-name="The Rock FM" data-country="New Zealand">
+                    <div class="station-card" data-url="https://digitalstreams.mediaworks.nz/rock_net_icy" data-name="The Rock FM" data-country="New Zealand">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%28222%20.5%20.5%29%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fad0c4%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23ffd1ff%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3E6P%3C%2Ftext%3E%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1900,7 +1903,7 @@
                             
                         </div>
                     </div>
-                    <div class="station-card" data-url="https://playerservices.streamtheworld.com/api/livestream-redirect/NZME" data-name="ZM" data-country="New Zealand">
+                    <div class="station-card" data-url="https://playerservices.streamtheworld.com/api/livestream-redirect/NZME_33AAC.aac" data-name="ZM" data-country="New Zealand">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%2884%20.5%20.5%29%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ff9a9e%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fecfef%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3EAN%3C%2Ftext%3E%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -1951,7 +1954,7 @@
                             
                         </div>
                     </div>
-                    <div class="station-card" data-url="https://playerservices.streamtheworld.com/api/livestream-redirect/KISS92.aac" data-name="Kiss 92" data-country="Singapore">
+                    <div class="station-card" data-url="https://playerservices.streamtheworld.com/api/livestream-redirect/KISS_92AAC.aac" data-name="Kiss 92" data-country="Singapore">
                         <button class="play-btn">▶</button>
                         <div class="station-logo" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20gradientTransform%3D%22rotate%28210%20.5%20.5%29%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23FF6B6B%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23FF8E53%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2224%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2260%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20letter-spacing%3D%22-1%22%3E2S%3C%2Ftext%3E%3C%2Fsvg%3E');background-size:cover;background-position:center;"></div>
                         <div class="station-info">
@@ -2048,6 +2051,7 @@
         let isMuted = false, currentVolume = 0.8, allStations = [], currentStationIndex = -1;
         let retryCount = 0, currentStationData = null;
         const MAX_RETRIES = 10;
+        const DEAD_LINK_RETRIES = 2;
         
         // Network detection
         function getNetworkType() {
@@ -2085,6 +2089,23 @@
             });
         }
         buildStationList();
+
+        // Keep the station / country counts in sync with the actual cards
+        (function updateCounts() {
+            const total = allStations.length;
+            const sections = document.querySelectorAll('.country-section');
+            sections.forEach(sec => {
+                const n = sec.querySelectorAll('.station-card').length;
+                const el = sec.querySelector('.country-header .count');
+                if (el) el.textContent = n + ' station' + (n !== 1 ? 's' : '');
+            });
+            const nums = document.querySelectorAll('.stats .stat-box .number');
+            if (nums[0]) nums[0].textContent = total;
+            if (nums[1]) nums[1].textContent = sections.length;
+            const tagline = document.querySelector('header p');
+            if (tagline) tagline.textContent = total + ' Free English-Speaking Radio Stations Worldwide • Click any station to Play';
+            document.title = 'BioRadio - ' + total + ' Stations';
+        })();
 
         // ===== SEARCH =====
         function filterStations(query) {
@@ -2136,17 +2157,16 @@
         });
         document.getElementById('stopBtn').addEventListener('click', stopAudio);
         document.getElementById('muteBtn').addEventListener('click', function() {
-            if (!currentAudio) return; isMuted = !isMuted; currentAudio.muted = isMuted;
+            isMuted = !isMuted; if (currentAudio) currentAudio.muted = isMuted;
             this.textContent = isMuted ? '🔇' : '🔊'; this.classList.toggle('muted', isMuted);
         });
-        document.getElementById('volUpBtn').addEventListener('click', () => {
-            if (!currentAudio) return; currentVolume = Math.min(1, currentVolume + 0.1); currentAudio.volume = currentVolume;
+        function setVolume(v) {
+            currentVolume = Math.round(Math.max(0, Math.min(1, v)) * 10) / 10;
+            if (currentAudio) currentAudio.volume = currentVolume;
             document.getElementById('volumeDisplay').textContent = Math.round(currentVolume * 100) + '%';
-        });
-        document.getElementById('volDownBtn').addEventListener('click', () => {
-            if (!currentAudio) return; currentVolume = Math.max(0, currentVolume - 0.1); currentAudio.volume = currentVolume;
-            document.getElementById('volumeDisplay').textContent = Math.round(currentVolume * 100) + '%';
-        });
+        }
+        document.getElementById('volUpBtn').addEventListener('click', () => setVolume(currentVolume + 0.1));
+        document.getElementById('volDownBtn').addEventListener('click', () => setVolume(currentVolume - 0.1));
 
         // ===== PREV / NEXT with proper bounds checking =====
         document.getElementById('prevBtn').addEventListener('click', () => {
@@ -2210,67 +2230,94 @@
         }
 
         // ===== 2G-OPTIMIZED PLAY ENGINE =====
+        // Every play attempt gets its own session id. Timers and audio events from an
+        // older attempt check the id and bail out, so pressing Stop or switching stations
+        // can never be "undone" by a late retry, timeout or error event.
+        let playSession = 0;
+        let retryTimer = null;
+        let currentHls = null;
+        let hlsLoader = null;
+        const HLS_JS_URL = 'https://cdn.jsdelivr.net/npm/hls.js@1.5.13/dist/hls.min.js';
+
+        function isHlsUrl(url) { return /\.m3u8(\?|$)/i.test(url); }
+        function canPlayHlsNatively() {
+            const a = document.createElement('audio');
+            return !!(a.canPlayType('application/vnd.apple.mpegurl') || a.canPlayType('application/x-mpegURL'));
+        }
+        function loadHlsJs() {
+            if (window.Hls) return Promise.resolve(window.Hls);
+            if (hlsLoader) return hlsLoader;
+            hlsLoader = new Promise((resolve, reject) => {
+                const s = document.createElement('script');
+                s.src = HLS_JS_URL;
+                s.onload = () => window.Hls ? resolve(window.Hls) : reject(new Error('hls.js missing'));
+                s.onerror = () => { hlsLoader = null; reject(new Error('hls.js failed to load')); };
+                document.head.appendChild(s);
+            });
+            return hlsLoader;
+        }
+
+        function teardownAudio() {
+            if (retryTimer) { clearTimeout(retryTimer); retryTimer = null; }
+            if (bufferMonitor) { clearInterval(bufferMonitor); bufferMonitor = null; }
+            if (currentHls) { try { currentHls.destroy(); } catch(e) {} currentHls = null; }
+            if (currentAudio) {
+                const a = currentAudio;
+                currentAudio = null; // clear first so the 'error' fired by removing src is ignored
+                try { a.pause(); a.removeAttribute('src'); a.load(); } catch(e) {}
+            }
+        }
+
         function playAudio(url, name, country, btn, card) {
+            teardownAudio();
+            const session = ++playSession;
+            const isCurrent = () => session === playSession;
+
             const net = getNetworkType();
             const slow = isSlowNetwork();
             const timeoutMs = slow ? 30000 : 20000; // 30s on 2G, 20s on fast
 
-            // Show buffer bar and network badge
             showBufferBar();
             showNetworkBadge();
 
-            // Clean up previous audio
-            if (currentAudio) {
-                try { currentAudio.pause(); currentAudio.src = ''; } catch(e) {}
-                currentAudio = null;
-            }
-
-            currentAudio = new Audio();
+            let src = url;
+            // Browsers block http:// audio on an https:// page (mixed content) — try https first.
+            if (location.protocol === 'https:' && src.startsWith('http://')) src = 'https://' + src.slice(7);
             // Cache-bust zeno.fm URLs to avoid expired redirect tokens
-            if (url.includes('zeno.fm')) {
-                const sep = url.includes('?') ? '&' : '?';
-                url = url + sep + '_=' + Date.now();
-            }
-            currentAudio.src = url;
-            currentAudio.volume = currentVolume;
-            currentAudio.muted = isMuted;
-            // On 2G: preload metadata first (smaller), then switch to auto
-            currentAudio.preload = slow ? 'metadata' : 'auto';
-            currentAudio.setAttribute('playsinline', 'true');
+            if (src.includes('zeno.fm')) src += (src.includes('?') ? '&' : '?') + '_=' + Date.now();
 
-            // Track states
-            let hasPlayed = false;
-            let hasError = false;
-            let hasCanPlay = false;
+            const audio = new Audio();
+            currentAudio = audio;
+            audio.volume = currentVolume;
+            audio.muted = isMuted;
+            audio.preload = slow ? 'metadata' : 'auto';
+            audio.setAttribute('playsinline', 'true');
+
+            let hasPlayed = false, hasError = false, stallCount = 0;
             let lastProgress = Date.now();
-            let progressChecker = null;
-            let timeoutId = null;
-            let stallCount = 0;
+            let progressChecker = null, timeoutId = null;
 
             function clearAllTimers() {
                 if (progressChecker) { clearInterval(progressChecker); progressChecker = null; }
                 if (timeoutId) { clearTimeout(timeoutId); timeoutId = null; }
-                if (bufferMonitor) { clearInterval(bufferMonitor); bufferMonitor = null; }
+                if (isCurrent() && bufferMonitor) { clearInterval(bufferMonitor); bufferMonitor = null; }
             }
 
-            // Start buffer monitoring
             bufferMonitor = setInterval(() => {
-                if (!currentAudio || hasPlayed || hasError) return;
+                if (!isCurrent() || hasPlayed || hasError) return;
                 try {
-                    if (currentAudio.buffered.length > 0) {
-                        const end = currentAudio.buffered.end(currentAudio.buffered.length - 1);
-                        const dur = currentAudio.duration || 30;
-                        const pct = (end / dur) * 100;
-                        updateBufferBar(Math.min(pct * 5, 90)); // Scale up for visual effect
+                    if (audio.buffered.length > 0) {
+                        const end = audio.buffered.end(audio.buffered.length - 1);
+                        const dur = isFinite(audio.duration) && audio.duration > 0 ? audio.duration : 30;
+                        updateBufferBar(Math.min((end / dur) * 500, 90));
                     } else {
-                        // No buffer yet, show pulsing animation
                         updateBufferBar(15);
                     }
                 } catch(e) {}
             }, 500);
 
             function onSuccess() {
-                if (hasPlayed) return;
+                if (!isCurrent() || hasPlayed) return;
                 hasPlayed = true;
                 retryCount = 0;
                 clearAllTimers();
@@ -2279,195 +2326,165 @@
                 btn.innerHTML = '⏸'; btn.disabled = false;
                 btn.classList.add('playing');
                 card.classList.add('playing');
+                card.classList.remove('offline');
                 nowPlayingStation.textContent = name;
                 nowPlayingCountry.textContent = country;
                 nowPlaying.classList.add('active');
                 currentPlayingBtn = btn;
                 currentPlayingCard = card;
-                // After metadata loads on 2G, increase buffer for smoother playback
-                if (slow && currentAudio) {
-                    try { currentAudio.preload = 'auto'; } catch(e) {}
-                }
-                // Update Media Session for lock screen / Bluetooth controls
+                if (slow) { try { audio.preload = 'auto'; } catch(e) {} }
                 updateMediaSession(name, country, 'playing');
             }
 
             function onFailure(reason) {
-                if (hasError) return;
+                if (!isCurrent() || hasError || hasPlayed) return;
                 hasError = true;
                 clearAllTimers();
-                hideBufferBar();
-                hideNetworkBadge();
+                console.warn('[BioRadio] ' + name + ': ' + reason);
 
                 if (retryCount < MAX_RETRIES) {
                     retryCount++;
                     const delay = getRetryDelay(retryCount - 1);
                     btn.innerHTML = '<span class="loading"></span>';
-                    const netLabel = net.type ? '(' + net.type.toUpperCase() + ')' : '';
-                    showToast(
-                        'Retrying... ' + netLabel,
-                        name + ' — Attempt ' + retryCount + '/' + MAX_RETRIES + ' (wait ' + Math.round(delay/1000) + 's)',
-                        'info'
-                    );
-                    setTimeout(() => {
-                        if (!hasPlayed && currentStationData) {
-                            playAudio(url, name, country, btn, card);
-                        }
+                    btn.disabled = false; // let the user cancel by tapping again
+                    currentPlayingBtn = btn; currentPlayingCard = card;
+                    const netLabel = net.type && net.type !== 'unknown' ? '(' + net.type.toUpperCase() + ')' : '';
+                    showToast('Retrying... ' + netLabel,
+                        name + ' — Attempt ' + retryCount + '/' + MAX_RETRIES + ' (wait ' + Math.round(delay/1000) + 's)', 'info');
+                    retryTimer = setTimeout(() => {
+                        retryTimer = null;
+                        if (isCurrent()) playAudio(url, name, country, btn, card);
                     }, delay);
                     return;
                 }
 
-                // All 10 retries exhausted
-                btn.innerHTML = '▶'; btn.disabled = false;
-                showToast(
-                    'Connection Failed',
-                    name + ' — Tried ' + MAX_RETRIES + ' times on ' + (net.type || 'your network') + '. This stream may be offline or geo-blocked.',
-                    'error'
-                );
-                // Auto-skip after all retries fail
+                // All retries exhausted
+                const attempts = Math.min(retryCount, MAX_RETRIES) + 1;
+                const failedIndex = currentStationIndex;
+                stopAudio();
+                card.classList.add('offline');
+                showToast('Connection Failed',
+                    name + ' — Tried ' + attempts + ' times. This stream may be offline or geo-blocked.', 'error');
+                const sessionAtFail = playSession;
                 setTimeout(() => {
-                    if (currentStationIndex >= 0 && !currentAudio) {
-                        const visibleStations = allStations.filter((s, idx) => idx !== currentStationIndex && !s.element.classList.contains('filtered-out'));
-                        if (visibleStations.length > 0) {
-                            showToast('Auto-skipping', 'Trying next station...', 'info');
-                            document.getElementById('nextBtn').click();
-                        }
+                    // Only auto-skip if the user hasn't started something else meanwhile
+                    if (sessionAtFail !== playSession || currentAudio) return;
+                    const others = allStations.filter((s, idx) => idx !== failedIndex && !s.element.classList.contains('filtered-out'));
+                    if (others.length > 0) {
+                        showToast('Auto-skipping', 'Trying next station...', 'info');
+                        currentStationIndex = failedIndex;
+                        document.getElementById('nextBtn').click();
                     }
                 }, 3000);
             }
 
-            // Progress monitoring - detects if data is still flowing
             progressChecker = setInterval(() => {
-                if (!currentAudio || hasPlayed || hasError) {
-                    clearAllTimers();
-                    return;
-                }
-                const now = Date.now();
-                // Check if buffered data is growing
-                let bufferedEnd = 0;
+                if (!isCurrent() || hasPlayed || hasError) { clearAllTimers(); return; }
                 try {
-                    if (currentAudio.buffered.length > 0) {
-                        bufferedEnd = currentAudio.buffered.end(currentAudio.buffered.length - 1);
-                    }
+                    if (audio.buffered.length > 0 && audio.buffered.end(audio.buffered.length - 1) > 0) lastProgress = Date.now();
                 } catch(e) {}
-                if (bufferedEnd > 0) {
-                    lastProgress = now;
-                }
-                // If no progress for 8s on fast, 15s on slow -> retry
                 const noProgressLimit = slow ? 15000 : 8000;
-                if ((now - lastProgress) > noProgressLimit && !hasError && !hasPlayed) {
-                    clearAllTimers();
-                    onFailure('no data progress');
-                }
+                if (Date.now() - lastProgress > noProgressLimit) onFailure('no data progress');
             }, 2000);
 
-            // Event: enough data buffered to start playing
-            currentAudio.addEventListener('canplay', function() {
-                hasCanPlay = true;
-                const p = currentAudio.play();
-                if (p !== undefined) {
-                    p.then(() => { onSuccess(); })
-                     .catch((err) => {
+            function tryPlay() {
+                if (!isCurrent() || hasPlayed) return;
+                const p = audio.play();
+                if (p === undefined) { onSuccess(); return; }
+                p.then(onSuccess).catch(err => {
+                    if (!isCurrent()) return;
+                    if (err.name === 'NotAllowedError') {
                         // Autoplay blocked - wait for user interaction
-                        if (err.name === 'NotAllowedError') {
-                            showToast('Tap to Play', 'Please tap the play button to start audio', 'info');
-                            btn.innerHTML = '▶'; btn.disabled = false;
-                            hasError = true;
-                            clearAllTimers();
-                        } else {
-                            onFailure('play blocked');
-                        }
-                    });
-                } else {
-                    onSuccess();
-                }
-            });
+                        hasError = true;
+                        clearAllTimers();
+                        hideBufferBar();
+                        btn.innerHTML = '▶'; btn.disabled = false;
+                        showToast('Tap to Play', 'Please tap the play button to start audio', 'info');
+                    } else if (err.name !== 'AbortError') {
+                        onFailure('play rejected: ' + err.name);
+                    }
+                });
+            }
 
-            // Event: actually playing audio
-            currentAudio.addEventListener('playing', function() {
+            audio.addEventListener('canplay', tryPlay);
+            audio.addEventListener('playing', () => {
+                if (!isCurrent()) return;
                 lastProgress = Date.now();
+                stallCount = 0;
                 onSuccess();
             });
-
-            // Event: waiting for more data (buffering)
-            currentAudio.addEventListener('waiting', function() {
-                if (!hasPlayed) return;
-                showToast('Buffering...', name + ' — Loading more audio on ' + (net.type || 'your network'), 'info');
+            audio.addEventListener('waiting', () => {
+                if (isCurrent() && hasPlayed) showToast('Buffering...', name + ' — Loading more audio', 'info');
             });
-
-            // Event: playback resumed after buffering
-            currentAudio.addEventListener('playing', function() {
-                if (stallCount > 0) {
-                    stallCount = 0;
-                }
-            });
-
-            // Event: stalled (no data arriving)
-            currentAudio.addEventListener('stalled', function() {
+            audio.addEventListener('stalled', () => {
+                if (!isCurrent()) return;
                 stallCount++;
-                if (stallCount >= 3 && !hasError) {
-                    onFailure('connection stalled');
-                } else if (!hasPlayed) {
-                    showToast('Loading...', name + ' — Building buffer for ' + (net.type || 'your network'), 'info');
+                if (stallCount >= 3 && !hasPlayed) onFailure('connection stalled');
+            });
+            audio.addEventListener('error', () => {
+                if (!isCurrent() || currentHls) return; // hls.js reports its own errors
+                const code = audio.error ? audio.error.code : 0;
+                const reasons = ['unknown', 'aborted', 'network', 'decode', 'src not supported'];
+                if (hasPlayed) {
+                    // Stream dropped mid-play: reconnect
+                    hasPlayed = false; hasError = false; retryCount = 0;
+                    btn.classList.remove('playing');
+                    playAudio(url, name, country, btn, card);
+                    return;
                 }
+                // "src not supported" usually means the stream URL is gone (404/403) —
+                // don't make the listener wait through 10 retries for a dead link.
+                if (code === 4 && retryCount >= DEAD_LINK_RETRIES) retryCount = MAX_RETRIES;
+                onFailure('audio error: ' + (reasons[code] || 'unknown'));
             });
-
-            // Event: error
-            currentAudio.addEventListener('error', function() {
-                clearAllTimers();
-                if (!hasError && !hasPlayed) {
-                    const code = currentAudio.error ? currentAudio.error.code : 0;
-                    const reasons = ['unknown', 'aborted', 'network', 'decode', 'src not supported'];
-                    onFailure('audio error: ' + (reasons[code] || 'unknown'));
-                }
+            audio.addEventListener('ended', () => { if (isCurrent()) stopAudio(); });
+            audio.addEventListener('pause', () => {
+                if (isCurrent() && currentStationData) updateMediaSession(currentStationData.name, currentStationData.country, 'paused');
             });
-
-            // Event: ended
-            currentAudio.addEventListener('ended', stopAudio);
-
-            // Event: pause (update media session)
-            currentAudio.addEventListener('pause', function() {
-                updateMediaSession(currentStationData ? currentStationData.name : '', currentStationData ? currentStationData.country : '', 'paused');
-            });
-
-            // Event: progress (data downloading)
-            currentAudio.addEventListener('progress', function() {
+            audio.addEventListener('progress', () => { lastProgress = Date.now(); });
+            audio.addEventListener('loadedmetadata', () => {
                 lastProgress = Date.now();
+                if (slow) tryPlay(); // On 2G, start as soon as we have metadata
             });
 
-            // Event: loadedmetadata
-            currentAudio.addEventListener('loadedmetadata', function() {
-                lastProgress = Date.now();
-                // On 2G, start playing as soon as we have metadata
-                if (slow && !hasPlayed) {
-                    const p = currentAudio.play();
-                    if (p !== undefined) {
-                        p.then(() => onSuccess()).catch(() => {});
-                    }
-                }
-            });
+            btn.innerHTML = '<span class="loading"></span>';
+            btn.disabled = false;
+            currentPlayingBtn = btn; currentPlayingCard = card; // so tapping again cancels
 
-            // Start loading the audio
-            try { currentAudio.load(); } catch(e) {}
-
-            // Show loading spinner
-            btn.innerHTML = '<span class="loading"></span>'; btn.disabled = true;
-
-            // Global timeout
             timeoutId = setTimeout(() => {
-                if (!hasPlayed && !hasError) {
-                    onFailure('timeout after ' + Math.round(timeoutMs/1000) + 's');
-                }
+                if (isCurrent() && !hasPlayed && !hasError) onFailure('timeout after ' + Math.round(timeoutMs/1000) + 's');
             }, timeoutMs);
+
+            // HLS (.m3u8) streams: native on Safari/iOS/Android, hls.js elsewhere (Firefox, older Chrome)
+            if (isHlsUrl(src) && !canPlayHlsNatively()) {
+                loadHlsJs().then(Hls => {
+                    if (!isCurrent()) return;
+                    if (!Hls.isSupported()) { onFailure('HLS not supported in this browser'); return; }
+                    const hls = new Hls({ lowLatencyMode: false, maxBufferLength: slow ? 60 : 30 });
+                    currentHls = hls;
+                    hls.on(Hls.Events.MANIFEST_PARSED, () => { lastProgress = Date.now(); tryPlay(); });
+                    hls.on(Hls.Events.FRAG_LOADED, () => { lastProgress = Date.now(); });
+                    hls.on(Hls.Events.ERROR, (evt, data) => {
+                        if (!isCurrent() || !data.fatal) return;
+                        if (hasPlayed && data.type === Hls.ErrorTypes.NETWORK_ERROR) { hls.startLoad(); return; }
+                        if (hasPlayed && data.type === Hls.ErrorTypes.MEDIA_ERROR) { hls.recoverMediaError(); return; }
+                        onFailure('hls ' + data.type + ': ' + data.details);
+                    });
+                    hls.loadSource(src);
+                    hls.attachMedia(audio);
+                }).catch(err => onFailure(err.message));
+            } else {
+                audio.src = src;
+                try { audio.load(); } catch(e) {}
+            }
         }
 
         function stopAudio() {
-            if (currentAudio) {
-                try { currentAudio.pause(); currentAudio.src = ''; } catch(e) {}
-                currentAudio = null;
-            }
+            playSession++; // invalidate any pending retries / timers / late events
+            teardownAudio();
             if (currentPlayingBtn) {
                 currentPlayingBtn.innerHTML = '▶';
+                currentPlayingBtn.disabled = false;
                 currentPlayingBtn.classList.remove('playing');
                 currentPlayingBtn = null;
             }
@@ -2477,7 +2494,6 @@
             }
             hideBufferBar();
             hideNetworkBadge();
-            if (bufferMonitor) { clearInterval(bufferMonitor); bufferMonitor = null; }
             nowPlaying.classList.remove('active');
             retryCount = 0;
             updateMediaSession('', '', 'none');

@@ -1,0 +1,14 @@
+{
+  "name": "BioRadio",
+  "short_name": "BioRadio",
+  "description": "Free English-speaking radio stations from around the world",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f0f1a",
+  "theme_color": "#1a1a2e",
+  "icons": [
+    { "src": "bioradio-logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "bioradio-logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
