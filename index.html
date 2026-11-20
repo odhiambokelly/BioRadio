@@ -2,513 +2,461 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#1a1a2e">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <!--SEO-->
+    <title>BioRadio – Free Live English Radio Online | 182 Stations in 27 Countries</title>
+    <meta name="description" content="Listen to 182 free live English radio stations from Kenya, South Africa, Nigeria, Ghana, the UK, USA, Canada, Australia and 19 more countries. No sign-up. Works on 2G, 3G and 4G. Install it as an app on Android or PC.">
+    <link rel="canonical" href="https://odhiambokelly.github.io/BioRadio/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BioRadio">
+    <meta property="og:title" content="BioRadio – Free Live English Radio from 27 Countries">
+    <meta property="og:description" content="182 free live English radio stations. No sign-up, works on slow networks, installs as an app.">
+    <meta property="og:url" content="https://odhiambokelly.github.io/BioRadio/">
+    <meta property="og:image" content="https://odhiambokelly.github.io/BioRadio/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BioRadio – Free Live English Radio from 27 Countries">
+    <meta name="twitter:description" content="182 free live English radio stations. No sign-up, works on slow networks, installs as an app.">
+    <meta name="twitter:image" content="https://odhiambokelly.github.io/BioRadio/og-image.png">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"BioRadio","url":"https://odhiambokelly.github.io/BioRadio/","inLanguage":"en"},{"@type":"WebApplication","name":"BioRadio","url":"https://odhiambokelly.github.io/BioRadio/","applicationCategory":"MultimediaApplication","operatingSystem":"Android, Windows, macOS, iOS, Linux","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free live English radio from 27 countries. Works on 2G, 3G and 4G."}]}</script>
+    <!--/SEO-->
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0d0f17">
+    <meta name="color-scheme" content="dark">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>BioRadio - Live Radio</title>
+    <meta name="apple-mobile-web-app-title" content="BioRadio">
+    <!--BASE--><!--/BASE-->
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/svg+xml" href="bioradio-logo.svg">
-    <link rel="icon" type="image/png" href="bioradio-logo.png">
-    <link rel="apple-touch-icon" href="bioradio-logo.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="bioradio-logo-192.png">
+    <link rel="apple-touch-icon" href="bioradio-logo-192.png">
     <style>
         :root {
-            --bg-primary: #0f0f1a;
-            --bg-secondary: #1a1a2e;
-            --bg-card: rgba(255, 255, 255, 0.04);
-            --bg-card-hover: rgba(255, 255, 255, 0.08);
+            --bg: #0d0f17;
+            --bg-2: #151826;
+            --card: #171a29;
+            --card-hover: #1e2235;
+            --line: rgba(255,255,255,0.07);
+            --text: #f4f5f8;
+            --text-2: #a9adbd;
+            --text-3: #737889;
             --accent: #7ED321;
-            --accent-light: #9BE446;
-            --accent-gold: #feca57;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0b0;
-            --text-muted: #6b6b7b;
-            --border: rgba(255, 255, 255, 0.06);
-            --success: #3ddc84;
-            --glass: rgba(26, 26, 46, 0.95);
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.2);
-            --shadow-md: 0 8px 32px rgba(0,0,0,0.3);
+            --accent-2: #9BE446;
+            --accent-ink: #0d1a02;
+            --gold: #fcd34d;
+            --danger: #ff6b6b;
+            --radius: 16px;
             --radius-sm: 12px;
-            --radius-md: 16px;
-            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 30px rgba(0,0,0,0.35);
+            --safe-b: env(safe-area-inset-bottom, 0px);
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
         }
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+        html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
         body {
-            /* System fonts only: no web-font download, so text shows instantly on 2G */
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: var(--bg-primary); min-height: 100vh; color: var(--text-primary);
-            padding-bottom: 100px; line-height: 1.5; overflow-x: hidden;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg); color: var(--text); line-height: 1.45; min-height: 100vh;
+            padding-bottom: calc(96px + var(--safe-b)); overflow-x: hidden;
         }
-        body::before {
-            content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(ellipse at 20% 20%, rgba(126, 211, 33, 0.12) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(15, 52, 96, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(126, 211, 33, 0.03) 0%, transparent 70%);
-            pointer-events: none; z-index: -1;
-        }
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 16px; }
-        @media (min-width: 768px) { .container { padding: 0 24px; } }
+        a { color: inherit; }
+        button, input { font: inherit; color: inherit; }
+        button { cursor: pointer; }
+        :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+        .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+        .wrap { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 16px; }
+        @media (min-width: 768px) { .wrap { padding: 0 28px; } }
 
         /* ===== TOP BAR ===== */
         .top-bar {
-            position: sticky; top: 0; z-index: 300;
-            background: var(--glass); backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            padding: 0 16px; height: 56px;
-            display: flex; align-items: center; justify-content: space-between;
+            position: sticky; top: 0; z-index: 300; height: 60px;
+            background: rgba(13,15,23,0.92); border-bottom: 1px solid var(--line);
+            -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
         }
-        .top-bar-title {
-            font-size: 1rem; font-weight: 700;
-            background: linear-gradient(135deg, var(--accent), var(--accent-light));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-            max-width: calc(100% - 60px);
+        .top-bar .wrap { height: 100%; display: flex; align-items: center; gap: 10px; }
+        .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-right: auto; min-width: 0; }
+        .brand svg { width: 34px; height: 34px; flex-shrink: 0; }
+        .brand b { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.3px; color: var(--accent); }
+        .icon-btn {
+            width: 42px; height: 42px; border-radius: 12px; border: 1px solid var(--line);
+            background: var(--card); display: inline-flex; align-items: center; justify-content: center;
+            font-size: 1.15rem; flex-shrink: 0; transition: background .2s var(--ease);
         }
-        .hamburger {
-            width: 44px; height: 44px; border-radius: 10px;
-            border: 1px solid var(--border); background: var(--bg-card);
-            color: var(--text-primary); font-size: 1.3rem; cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            transition: var(--transition); flex-shrink: 0;
+        .icon-btn:hover { background: var(--card-hover); }
+        .install-btn {
+            display: inline-flex; align-items: center; gap: 6px; border: none; border-radius: 999px;
+            background: var(--accent); color: var(--accent-ink); font-weight: 800; font-size: 0.85rem;
+            padding: 10px 14px; white-space: nowrap; transition: transform .15s var(--ease), background .2s;
         }
-        .hamburger:hover { background: var(--bg-card-hover); }
-        .hamburger:active { transform: scale(0.92); }
+        .install-btn:hover { background: var(--accent-2); }
+        .install-btn:active { transform: scale(0.96); }
 
-        /* ===== PULL TO REFRESH ===== */
-        .ptr-indicator {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 5000;
-            display: flex; align-items: center; justify-content: center;
-            gap: 8px; padding: 12px; font-size: 0.85rem; color: var(--text-muted);
-            background: var(--glass); backdrop-filter: blur(10px);
-            transform: translateY(-100%); transition: transform 0.2s ease;
-            pointer-events: none; border-bottom: 1px solid var(--border);
+        /* ===== HERO ===== */
+        .hero { padding: 26px 0 8px; text-align: center; }
+        .hero h1 { font-size: clamp(1.45rem, 4.8vw, 2.4rem); line-height: 1.15; font-weight: 800; letter-spacing: -0.5px; }
+        .hero h1 span { color: var(--accent); }
+        .hero p.sub { color: var(--text-2); margin: 8px auto 0; max-width: 640px; font-size: clamp(0.9rem, 2.6vw, 1.02rem); }
+        .stats { display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+        .stat { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 0.82rem; color: var(--text-2); }
+        .stat .number { color: var(--accent); font-weight: 800; }
+        .search-box { position: relative; max-width: 640px; margin: 18px auto 0; }
+        .search-box svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--text-3); pointer-events: none; }
+        .search-input {
+            width: 100%; height: 54px; border-radius: 999px; border: 1px solid var(--line);
+            background: var(--card); padding: 0 50px 0 48px; font-size: 16px; outline: none;
+            transition: border-color .2s, background .2s; -webkit-appearance: none; appearance: none;
         }
-        .ptr-indicator.visible { transform: translateY(0); }
-        .ptr-indicator svg { animation: ptrSpin 1s linear infinite paused; }
-        .ptr-indicator.visible svg { animation-play-state: running; }
-        @keyframes ptrSpin { to { transform: rotate(360deg); } }
+        .search-input::placeholder { color: var(--text-3); }
+        .search-input:focus { border-color: var(--accent); background: var(--card-hover); }
+        .search-clear {
+            position: absolute; right: 8px; top: 50%; transform: translateY(-50%); width: 38px; height: 38px;
+            border-radius: 50%; border: none; background: transparent; color: var(--text-2); display: none; font-size: 1rem;
+        }
+        .search-clear.visible { display: block; }
+        .search-results-count { text-align: center; color: var(--text-3); font-size: 0.85rem; min-height: 22px; margin-top: 6px; }
+
+        /* ===== COUNTRY CHIPS ===== */
+        .chips {
+            display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; margin: 4px 0 6px;
+            scrollbar-width: none; -webkit-overflow-scrolling: touch; scroll-snap-type: x proximity;
+        }
+        .chips::-webkit-scrollbar { display: none; }
+        .chip {
+            display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0; scroll-snap-align: start;
+            background: var(--card); border: 1px solid var(--line); border-radius: 999px;
+            padding: 6px 14px 6px 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600; color: var(--text-2);
+            transition: background .2s, color .2s, border-color .2s;
+        }
+        .chip:hover, .chip.active { background: var(--card-hover); color: var(--text); border-color: rgba(126,211,33,0.4); }
+        .chip img { width: 28px; height: 21px; border-radius: 4px; object-fit: cover; }
+        @media (min-width: 1024px) { .chips { flex-wrap: wrap; overflow: visible; justify-content: center; } }
+
+        /* ===== TOOL ROW: install + data saver ===== */
+        .tools { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; align-items: center; margin: 2px 0 18px; }
+        .install-card {
+            display: flex; align-items: center; gap: 12px; background: linear-gradient(135deg, rgba(126,211,33,0.14), rgba(126,211,33,0.04));
+            border: 1px solid rgba(126,211,33,0.25); border-radius: var(--radius); padding: 10px 12px 10px 16px; flex: 1 1 420px; max-width: 640px;
+        }
+        .install-card .txt { flex: 1; min-width: 0; font-size: 0.86rem; color: var(--text-2); }
+        .install-card .txt b { color: var(--text); display: block; font-size: 0.95rem; }
+        .install-card.installed { display: none; }
+        .install-help { display: none; flex-basis: 100%; max-width: 640px; font-size: 0.86rem; color: var(--text-2); background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 12px 14px; line-height: 1.6; }
+        .install-help.visible { display: block; }
+        .install-help b { color: var(--text); }
+        .data-saver { display: inline-flex; align-items: center; gap: 10px; font-size: 0.86rem; color: var(--text-2); cursor: pointer; user-select: none; }
+        .data-saver input { position: absolute; opacity: 0; width: 0; height: 0; }
+        .switch { width: 42px; height: 24px; border-radius: 999px; background: #2a2e42; position: relative; transition: background .2s; flex-shrink: 0; }
+        .switch::after { content: ''; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: transform .2s var(--ease); }
+        .data-saver input:checked + .switch { background: var(--accent); }
+        .data-saver input:checked + .switch::after { transform: translateX(18px); }
+        .data-saver input:focus-visible + .switch { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+        /* ===== RECENTLY PLAYED ===== */
+        .recent { margin: 4px 0 22px; display: none; }
+        .recent.visible { display: block; }
+        .section-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-3); font-weight: 700; margin: 0 2px 10px; }
+        .recent-row { display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; }
+        .recent-row::-webkit-scrollbar { display: none; }
+        .recent-item {
+            flex-shrink: 0; width: 96px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-sm);
+            padding: 10px 8px; text-align: center; font-size: 0.78rem; color: var(--text-2); border-style: solid;
+        }
+        .recent-item:hover { background: var(--card-hover); color: var(--text); }
+        .recent-item .station-logo { margin: 0 auto 6px; }
+        .recent-item span { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        /* ===== COUNTRY SECTIONS ===== */
+        .country-section { margin-bottom: 30px; scroll-margin-top: 70px; content-visibility: auto; contain-intrinsic-size: auto 520px; }
+        .country-section.filtered-out { display: none; }
+        .country-header {
+            display: flex; align-items: center; gap: 12px; margin-bottom: 12px; padding: 8px 0;
+            position: sticky; top: 60px; z-index: 50; background: var(--bg);
+        }
+        .country-header h2 { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.2px; }
+        .country-header .count { margin-left: auto; font-size: 0.75rem; color: var(--text-3); background: var(--card); padding: 4px 10px; border-radius: 999px; font-weight: 600; white-space: nowrap; }
+        .flag-img { width: 40px; height: 30px; object-fit: cover; border-radius: 5px; flex-shrink: 0; background: #333; box-shadow: 0 0 0 1px rgba(255,255,255,0.12); }
+        .country-header .flag-img { width: 44px; height: 33px; }
+        @media (min-width: 768px) { .country-header .flag-img { width: 52px; height: 39px; } .country-header h2 { font-size: 1.3rem; } }
+
+        /* ===== STATION CARDS ===== */
+        .stations-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+        @media (min-width: 600px) { .stations-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (min-width: 980px) { .stations-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; } }
+        @media (min-width: 1600px) { .wrap { max-width: 1520px; } .stations-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+        .station-card {
+            display: flex; align-items: center; gap: 12px; min-height: 76px; padding: 10px 10px 10px 12px;
+            background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+            cursor: pointer; transition: background .2s, border-color .2s, transform .15s var(--ease); position: relative;
+        }
+        .station-card:hover { background: var(--card-hover); border-color: rgba(126,211,33,0.25); }
+        .station-card:active { transform: scale(0.99); }
+        .station-card.playing { border-color: var(--accent); background: linear-gradient(135deg, rgba(126,211,33,0.13), rgba(126,211,33,0.03)); }
+        .station-card.filtered-out { display: none !important; }
+        .station-card.offline { opacity: 0.55; }
+        .station-card.offline .freq::after { content: " • offline"; color: var(--danger); }
+        .station-logo {
+            width: 52px; height: 52px; border-radius: 12px; overflow: hidden; flex-shrink: 0; background: #fff;
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
+        }
+        .station-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .station-logo.initials { display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.95rem; color: #fff; letter-spacing: -0.5px; }
+        .station-info { flex: 1; min-width: 0; }
+        .station-info h3 { font-size: 0.98rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .station-info .meta { display: flex; align-items: center; gap: 6px; margin-top: 2px; min-width: 0; }
+        .station-info .genre { font-size: 0.8rem; color: var(--text-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+        .station-info .freq { font-size: 0.72rem; color: var(--accent); font-weight: 700; background: rgba(126,211,33,0.1); padding: 1px 7px; border-radius: 6px; white-space: nowrap; flex-shrink: 0; }
+        .play-btn {
+            width: 46px; height: 46px; border-radius: 50%; border: none; flex-shrink: 0;
+            background: var(--accent); color: var(--accent-ink); font-size: 1rem; font-weight: 900;
+            display: flex; align-items: center; justify-content: center; transition: transform .15s var(--ease), background .2s;
+        }
+        .play-btn:hover { background: var(--accent-2); }
+        .play-btn:active { transform: scale(0.92); }
+        .play-btn.playing { background: var(--gold); }
+        .play-btn:disabled { opacity: 0.7; }
+        .loading { width: 18px; height: 18px; border: 2.5px solid rgba(13,26,2,0.25); border-top-color: var(--accent-ink); border-radius: 50%; animation: spin .8s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        /* equaliser bars on the playing card */
+        .station-card.playing .station-info h3::after {
+            content: ''; display: inline-block; width: 14px; height: 11px; margin-left: 8px; vertical-align: 0;
+            background: linear-gradient(var(--accent),var(--accent)) 0 100%/3px 40% no-repeat, linear-gradient(var(--accent),var(--accent)) 5px 100%/3px 100% no-repeat, linear-gradient(var(--accent),var(--accent)) 10px 100%/3px 60% no-repeat;
+            animation: eq 0.9s ease-in-out infinite alternate;
+        }
+        @keyframes eq { 50% { background-size: 3px 90%, 3px 30%, 3px 100%; } }
+        @media (prefers-reduced-motion: reduce) { *, *::after { animation: none !important; transition: none !important; } }
+
+        /* plain list that search engines read; visible only until the cards render */
+        #stationList > h2 { font-size: 1.1rem; margin: 18px 0 8px; }
+        #stationList > ul { list-style: none; color: var(--text-2); font-size: 0.9rem; columns: 2 260px; gap: 24px; }
+        #stationList > ul li { padding: 3px 0; break-inside: avoid; }
+        .no-results { text-align: center; padding: 50px 20px; color: var(--text-3); display: none; }
+        .no-results div { font-size: 2.6rem; opacity: 0.5; margin-bottom: 10px; }
+
+        /* ===== FOOTER (also helps search engines find every country page) ===== */
+        footer { border-top: 1px solid var(--line); margin-top: 26px; padding: 26px 0 10px; color: var(--text-3); font-size: 0.86rem; }
+        footer h2 { font-size: 1rem; color: var(--text-2); margin-bottom: 8px; }
+        footer p { max-width: 760px; margin-bottom: 14px; line-height: 1.6; }
+        .country-links { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-bottom: 18px; }
+        .country-links a { color: var(--text-2); text-decoration: none; }
+        .country-links a:hover { color: var(--accent); text-decoration: underline; }
 
         /* ===== SIDE MENU ===== */
-        .menu-overlay {
-            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.6); z-index: 400; opacity: 0;
-            pointer-events: none; transition: opacity 0.3s ease;
-        }
+        .menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 400; opacity: 0; pointer-events: none; transition: opacity .3s; }
         .menu-overlay.active { opacity: 1; pointer-events: auto; }
         .side-menu {
-            position: fixed; top: 0; right: 0; bottom: 0; width: min(320px, 85vw);
-            background: var(--glass); backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border-left: 1px solid var(--border); z-index: 500;
-            transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden; padding: 16px 16px 0;
-            display: flex; flex-direction: column;
+            position: fixed; top: 0; right: 0; bottom: 0; width: min(340px, 88vw); z-index: 500;
+            background: var(--bg-2); border-left: 1px solid var(--line); box-shadow: var(--shadow);
+            transform: translateX(105%); transition: transform .3s var(--ease);
+            display: flex; flex-direction: column; padding: 14px 14px 0; padding-bottom: var(--safe-b);
         }
         .side-menu.active { transform: translateX(0); }
         body.menu-open .toast-container { display: none; }
-        .menu-header {
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 8px 0 12px; flex-shrink: 0;
-        }
-        /* Search inside the country menu */
-        .menu-search-wrap { position: relative; flex-shrink: 0; padding-bottom: 12px; margin-bottom: 8px; border-bottom: 1px solid var(--border); }
+        .menu-header { display: flex; align-items: center; justify-content: space-between; padding: 4px 2px 12px; }
+        .menu-header h2 { font-size: 1.05rem; font-weight: 800; color: var(--accent); }
+        .menu-close { width: 38px; height: 38px; border-radius: 50%; border: none; background: var(--card); font-size: 1rem; }
+        .menu-search-wrap { position: relative; padding-bottom: 12px; margin-bottom: 6px; border-bottom: 1px solid var(--line); }
         .menu-search {
-            width: 100%; padding: 12px 40px 12px 14px; border-radius: 12px;
-            border: 1px solid var(--border); background: rgba(255,255,255,0.06);
-            color: var(--text-primary); font-size: 16px; font-family: inherit; outline: none;
-            -webkit-appearance: none; appearance: none;
+            width: 100%; height: 46px; padding: 0 42px 0 14px; border-radius: 12px; border: 1px solid var(--line);
+            background: var(--card); font-size: 16px; outline: none; -webkit-appearance: none; appearance: none;
         }
-        .menu-search::placeholder { color: var(--text-muted); }
-        .menu-search:focus { border-color: var(--accent); background: rgba(255,255,255,0.09); }
-        .menu-search-clear {
-            position: absolute; right: 6px; top: 6px; width: 32px; height: 32px; border-radius: 50%;
-            border: none; background: transparent; color: var(--text-muted); font-size: 1rem; cursor: pointer; display: none;
-        }
+        .menu-search::placeholder { color: var(--text-3); }
+        .menu-search:focus { border-color: var(--accent); }
+        .menu-search-clear { position: absolute; right: 6px; top: 7px; width: 32px; height: 32px; border-radius: 50%; border: none; background: transparent; color: var(--text-3); display: none; }
         .menu-search-clear.visible { display: block; }
-        .menu-items { flex: 1; overflow-y: auto; padding-bottom: 24px; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
-        .menu-section-title { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin: 10px 4px 6px; font-weight: 700; }
-        .menu-empty { color: var(--text-muted); text-align: center; padding: 24px 8px; font-size: 0.9rem; }
-        /* Real flag images (emoji flags don't show on Windows) */
-        .flag-img {
-            width: 40px; height: 30px; object-fit: cover; border-radius: 5px; flex-shrink: 0;
-            box-shadow: 0 0 0 1px rgba(255,255,255,0.15), 0 2px 6px rgba(0,0,0,0.35); background: #333;
+        .menu-items { flex: 1; overflow-y: auto; padding-bottom: 20px; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+        .menu-item {
+            display: flex; align-items: center; gap: 12px; padding: 9px 10px; border-radius: 12px;
+            color: var(--text-2); text-decoration: none; font-size: 0.93rem; font-weight: 600; margin-bottom: 2px;
         }
+        .menu-item:hover, .menu-item:focus-visible { background: var(--card-hover); color: var(--text); }
         .menu-item .flag-img { width: 44px; height: 33px; }
-        .menu-item .menu-count { margin-left: auto; font-size: 0.75rem; color: var(--text-muted); background: var(--bg-card); padding: 2px 9px; border-radius: 12px; }
+        .menu-item .menu-count { margin-left: auto; font-size: 0.75rem; color: var(--text-3); background: var(--card); padding: 2px 9px; border-radius: 999px; }
+        .menu-section-title { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-3); margin: 10px 6px 6px; font-weight: 700; }
+        .menu-empty { color: var(--text-3); text-align: center; padding: 24px 8px; font-size: 0.9rem; }
         .menu-station { cursor: pointer; }
         .menu-station .menu-logo { width: 40px; height: 40px; border-radius: 10px; object-fit: cover; background: #fff; flex-shrink: 0; }
         .menu-station .menu-logo.initials { display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; font-size: 0.8rem; }
         .menu-station .menu-text { display: flex; flex-direction: column; min-width: 0; }
-        .menu-station .menu-text b { color: var(--text-primary); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .menu-station .menu-text span { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: var(--text-muted); }
+        .menu-station .menu-text b { color: var(--text); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .menu-station .menu-text span { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: var(--text-3); font-weight: 500; }
         .menu-station .menu-text span img { width: 18px; height: 13px; border-radius: 2px; object-fit: cover; }
-        mark { background: rgba(126, 211, 33, 0.3); color: inherit; border-radius: 3px; padding: 0 1px; }
-        .menu-header h3 { font-size: 1rem; font-weight: 700; color: var(--accent); }
-        .menu-close {
-            width: 36px; height: 36px; border-radius: 50%; border: none;
-            background: var(--bg-card); color: var(--text-primary); font-size: 1.1rem;
-            cursor: pointer; display: flex; align-items: center; justify-content: center;
-        }
-        .menu-item {
-            display: flex; align-items: center; gap: 10px; padding: 12px 14px;
-            border-radius: 10px; color: var(--text-secondary); text-decoration: none;
-            font-size: 0.9rem; font-weight: 500; transition: var(--transition); margin-bottom: 4px;
-        }
-        .menu-item:hover { background: var(--bg-card-hover); color: var(--text-primary); }
-
-        /* ===== HEADER ===== */
-        header { text-align: center; padding: 32px 0 24px; }
-        header h1 {
-            font-size: clamp(1.5rem, 5vw, 2.5rem); font-weight: 900; margin-bottom: 10px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 50%, var(--accent-gold) 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-            letter-spacing: -0.02em; line-height: 1.2;
-        }
-        header p { color: var(--text-secondary); font-size: clamp(0.8rem, 2vw, 1rem); margin-bottom: 16px; }
-        /* ===== STATS ===== */
-        .stats { display: flex; justify-content: center; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
-        .stat-box {
-            background: var(--bg-card); padding: 16px 24px; border-radius: var(--radius-md);
-            text-align: center; border: 1px solid var(--border); flex: 1; min-width: 100px; max-width: 160px;
-            backdrop-filter: blur(10px); transition: var(--transition);
-        }
-        .stat-box .number { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; color: var(--accent); line-height: 1; }
-        .stat-box .label { color: var(--text-muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 6px; }
-
-        /* ===== SEARCH ===== */
-        .search-container { padding: 8px 0 16px; }
-        .search-box { position: relative; max-width: 600px; margin: 0 auto; }
-        .search-input {
-            width: 100%; padding: 14px 48px 14px 20px; border-radius: 50px;
-            border: 1px solid var(--border); background: var(--bg-card); color: var(--text-primary);
-            font-size: 1rem; font-family: inherit; outline: none; transition: var(--transition); -webkit-appearance: none;
-        }
-        .search-input::placeholder { color: var(--text-muted); }
-        .search-input:focus { border-color: var(--accent); background: var(--bg-card-hover); box-shadow: 0 0 0 3px rgba(126, 211, 33, 0.15); }
-        .search-clear {
-            position: absolute; right: 6px; top: 50%; transform: translateY(-50%); width: 36px; height: 36px;
-            border-radius: 50%; border: none; background: transparent; color: var(--text-muted); font-size: 1.2rem;
-            cursor: pointer; display: none; align-items: center; justify-content: center;
-        }
-        .search-clear.visible { display: flex; }
-        .search-results-count { text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 6px; min-height: 20px; }
-
-        /* ===== COUNTRY SECTION ===== */
-        .country-section { margin-bottom: 40px; scroll-margin-top: 70px; }
-        .country-header {
-            display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
-            padding: 10px 0; border-bottom: 2px solid var(--border); position: sticky;
-            top: 56px; background: var(--bg-primary); z-index: 50; backdrop-filter: blur(10px);
-        }
-        .country-header .flag-img { width: 48px; height: 36px; border-radius: 6px; }
-        @media (min-width: 768px) { .country-header .flag-img { width: 56px; height: 42px; } }
-        .country-section.filtered-out { display: none; }
-        .country-header h3 { font-size: 1.2rem; color: var(--accent-gold); font-weight: 700; }
-        .country-header .count {
-            margin-left: auto; background: var(--bg-card); padding: 4px 12px;
-            border-radius: 20px; font-size: 0.75rem; color: var(--text-muted); font-weight: 600;
-        }
-
-        /* ===== STATIONS GRID ===== */
-        .stations-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
-        @media (min-width: 480px) { .stations-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
-        @media (min-width: 768px) { .stations-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
-        @media (min-width: 1024px) { .stations-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; } }
-
-        /* ===== STATION CARD ===== */
-        .station-card {
-            background: var(--bg-card); border-radius: var(--radius-sm); padding: 14px;
-            display: flex; align-items: center; gap: 12px; transition: var(--transition);
-            border: 1px solid var(--border); cursor: pointer; position: relative; overflow: hidden;
-        }
-        .station-card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%;
-            background: var(--accent); opacity: 0; transition: var(--transition);
-        }
-        .station-card:hover { background: var(--bg-card-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: rgba(126, 211, 33, 0.2); }
-        .station-card:hover::before { opacity: 1; }
-        .station-card.playing { border-color: var(--accent); background: rgba(126, 211, 33, 0.08); box-shadow: 0 0 20px rgba(126, 211, 33, 0.1); }
-        .station-card.playing::before { opacity: 1; }
-        .station-card.filtered-out { display: none !important; }
-        .station-card.offline { opacity: 0.55; }
-        .station-card.offline .freq::after { content: " • offline"; color: #ff6b6b; }
-
-        /* ===== STATION LOGO ===== */
-        .station-logo {
-            width: 48px; height: 48px; min-width: 48px; border-radius: 14px;
-            overflow: hidden;
-            transition: var(--transition);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            flex-shrink: 0;
-        }
-        .station-card:hover .station-logo { transform: scale(1.08); box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
-        .station-logo img { width: 100%; height: 100%; object-fit: cover; display: block; background: #fff; }
-        .station-logo.initials {
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 800; font-size: 0.95rem; color: #fff; letter-spacing: -0.5px;
-        }
-        /* Skip layout/paint work for off-screen countries: faster first load on slow phones */
-        .country-section { content-visibility: auto; contain-intrinsic-size: auto 600px; }
-
-        /* ===== INSTALL / DOWNLOAD ===== */
-        .install-btn {
-            margin-left: auto; margin-right: 10px; border: none; cursor: pointer;
-            background: var(--accent); color: #0f0f1a; font-weight: 800; font-size: 0.85rem;
-            padding: 8px 14px; border-radius: 20px; display: none; align-items: center; gap: 6px;
-            font-family: inherit;
-        }
-        .install-btn.visible { display: inline-flex; }
-        .install-card {
-            background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md);
-            padding: 18px; margin: 0 auto 28px; max-width: 640px; text-align: center;
-        }
-        .install-card h2 { font-size: 1.1rem; margin-bottom: 6px; }
-        .install-card p { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 12px; }
-        .install-card .install-btn { margin: 0 auto; font-size: 1rem; padding: 12px 22px; display: inline-flex; }
-        .install-card .install-help { display: none; text-align: left; font-size: 0.85rem; color: var(--text-secondary); margin-top: 12px; line-height: 1.6; }
-        .install-card .install-help.visible { display: block; }
-        .install-card .install-help b { color: var(--text-primary); }
-        .install-card.installed { display: none; }
-        .data-saver { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; font-size: 0.85rem; color: var(--text-secondary); }
-        .data-saver input { width: 18px; height: 18px; accent-color: var(--accent); }
-
-        .play-btn {
-            width: 52px; height: 52px; min-width: 52px; border-radius: 50%; border: none;
-            background: linear-gradient(135deg, var(--accent), var(--accent-light)); color: white;
-            font-size: 1.3rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
-            transition: var(--transition); flex-shrink: 0;
-        }
-        .play-btn:hover { transform: scale(1.08); box-shadow: 0 4px 16px rgba(126, 211, 33, 0.4); }
-        .play-btn:active { transform: scale(0.95); }
-        .play-btn.playing { background: linear-gradient(135deg, var(--accent-gold), #ff9f43); animation: pulse-gold 2s infinite; }
-        @keyframes pulse-gold { 0%, 100% { box-shadow: 0 0 0 0 rgba(126, 211, 33, 0.3); } 50% { box-shadow: 0 0 0 10px rgba(254, 202, 87, 0); } }
-        .play-btn:disabled { background: #3a3a4a; cursor: not-allowed; }
-
-        .station-info { flex: 1; min-width: 0; }
-        .station-info h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .station-info .genre { color: var(--text-muted); font-size: 0.78rem; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .station-info .freq { color: var(--accent); font-size: 0.75rem; font-weight: 700; background: rgba(126, 211, 33, 0.1); padding: 2px 8px; border-radius: 6px; display: inline-block; margin-right: 6px; }
-        .station-info .city { color: var(--text-muted); font-size: 0.75rem; display: inline-block; }
-
-        .loading { display: inline-block; width: 18px; height: 18px; border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 50%; border-top-color: white; animation: spin 0.8s linear infinite; }
-        @keyframes spin { to { transform: rotate(360deg); } }
-
-        /* ===== TOAST NOTIFICATION ===== */
-        .toast-container {
-            position: fixed; top: 70px; right: 16px; z-index: 10000;
-            display: flex; flex-direction: column; gap: 8px; pointer-events: none;
-        }
-        .toast {
-            background: var(--glass); backdrop-filter: blur(20px);
-            border: 1px solid var(--border); border-radius: var(--radius-sm);
-            padding: 14px 20px; min-width: 280px; max-width: 360px;
-            display: flex; align-items: center; gap: 12px;
-            transform: translateX(120%); opacity: 0;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            pointer-events: auto; box-shadow: var(--shadow-md);
-        }
-        .toast.show { transform: translateX(0); opacity: 1; }
-        .toast-icon { font-size: 1.3rem; flex-shrink: 0; }
-        .toast-content { flex: 1; }
-        .toast-title { font-size: 0.85rem; font-weight: 600; margin-bottom: 2px; }
-        .toast-message { font-size: 0.78rem; color: var(--text-muted); }
-        .toast.error { border-left: 3px solid var(--accent-light); }
-        .toast.success { border-left: 3px solid var(--success); }
-        .toast.info { border-left: 3px solid var(--accent); }
-        .toast-close {
-            width: 24px; height: 24px; border-radius: 50%; border: none;
-            background: transparent; color: var(--text-muted); cursor: pointer;
-            font-size: 0.8rem; display: flex; align-items: center; justify-content: center;
-        }
-        .toast-close:hover { color: var(--text-primary); background: var(--bg-card-hover); }
-
-        /* ===== BUFFER PROGRESS BAR ===== */
-        .buffer-bar {
-            position: fixed; bottom: 78px; left: 0; right: 0; height: 3px;
-            background: rgba(255,255,255,0.05); z-index: 999; display: none;
-        }
-        .buffer-bar.active { display: block; }
-        .buffer-bar-fill {
-            height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent), var(--accent-light));
-            border-radius: 0 2px 2px 0; transition: width 0.3s ease;
-            box-shadow: 0 0 8px rgba(126, 211, 33, 0.4);
-        }
-        .buffer-bar-pulse {
-            animation: buffer-pulse 1s infinite;
-        }
-        @keyframes buffer-pulse {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
-        }
-        .network-badge {
-            position: fixed; bottom: 82px; right: 12px; z-index: 1001;
-            background: var(--glass); backdrop-filter: blur(10px);
-            border: 1px solid var(--border); border-radius: 20px;
-            padding: 3px 10px; font-size: 0.65rem; font-weight: 700;
-            color: var(--text-muted); display: none;
-        }
-        .network-badge.active { display: block; }
-        .network-badge.slow { color: var(--accent-gold); border-color: rgba(126, 211, 33, 0.3); }
-        .network-badge.fast { color: var(--success); border-color: rgba(61, 220, 132, 0.3); }
+        mark { background: rgba(126,211,33,0.3); color: inherit; border-radius: 3px; padding: 0 1px; }
 
         /* ===== NOW PLAYING BAR ===== */
         .now-playing {
-            position: fixed; bottom: 0; left: 0; right: 0; background: var(--glass);
-            backdrop-filter: blur(20px) saturate(1.2); -webkit-backdrop-filter: blur(20px) saturate(1.2);
-            border-top: 1px solid var(--border); padding: 12px 16px; display: none;
-            z-index: 1000; align-items: center; gap: 12px; box-shadow: 0 -4px 24px rgba(0,0,0,0.3);
+            position: fixed; left: 0; right: 0; bottom: 0; z-index: 1000; display: none;
+            background: rgba(21,24,38,0.97); border-top: 1px solid var(--line); box-shadow: 0 -8px 30px rgba(0,0,0,0.35);
+            -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+            padding: 10px 14px calc(10px + var(--safe-b));
         }
-        .now-playing.active { display: flex; }
+        .now-playing.active { display: block; }
+        .now-playing-inner { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; gap: 12px; }
+        .np-logo { width: 46px; height: 46px; border-radius: 10px; object-fit: cover; background: #fff; flex-shrink: 0; display: none; }
+        .np-logo.visible { display: block; }
         .now-playing-info { flex: 1; min-width: 0; }
-        .now-playing-info .station-name { font-size: 0.95rem; font-weight: 700; color: var(--accent); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .now-playing-info .country { color: var(--text-muted); font-size: 0.78rem; }
+        .now-playing-info .station-name { font-size: 0.98rem; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .now-playing-info .country { font-size: 0.78rem; color: var(--text-3); display: flex; align-items: center; gap: 6px; }
+        .now-playing-info .country::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--danger); box-shadow: 0 0 0 3px rgba(255,107,107,0.2); animation: live 1.6s ease-in-out infinite; }
+        @keyframes live { 50% { opacity: 0.35; } }
         .player-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
-        .control-btn {
-            width: 42px; height: 42px; border-radius: 50%; border: none;
-            background: rgba(255, 255, 255, 0.08); color: white; font-size: 1.1rem;
-            cursor: pointer; display: flex; align-items: center; justify-content: center; transition: var(--transition);
+        .control-btn { width: 42px; height: 42px; border-radius: 50%; border: none; background: rgba(255,255,255,0.08); font-size: 1rem; display: flex; align-items: center; justify-content: center; }
+        .control-btn:hover { background: rgba(255,255,255,0.16); }
+        .control-btn.muted { background: var(--gold); color: var(--accent-ink); }
+        .volume-control { display: flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.06); padding: 3px 8px; border-radius: 999px; }
+        .volume-btn { width: 32px; height: 32px; border-radius: 50%; border: none; background: transparent; font-size: 1rem; }
+        .volume-display { min-width: 38px; text-align: center; font-size: 0.78rem; color: var(--accent); font-weight: 700; }
+        .stop-btn { border: none; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-weight: 800; padding: 11px 18px; font-size: 0.88rem; white-space: nowrap; }
+        .stop-btn:hover { background: var(--accent-2); }
+        @media (max-width: 640px) {
+            .volume-control, #muteBtn { display: none; }
+            .control-btn { width: 40px; height: 40px; }
+            .stop-btn { padding: 10px 14px; }
+            .np-logo { width: 40px; height: 40px; }
         }
-        .control-btn:hover { background: rgba(233, 69, 96, 0.7); }
-        .control-btn:active { transform: scale(0.92); }
-        .control-btn.muted { background: var(--accent-light); }
-        .volume-control { display: flex; align-items: center; gap: 6px; background: rgba(255, 255, 255, 0.05); padding: 4px 10px; border-radius: 20px; }
-        .volume-btn { width: 32px; height: 32px; border-radius: 50%; border: none; background: transparent; color: white; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-        .volume-display { min-width: 36px; text-align: center; font-size: 0.75rem; color: var(--accent); font-weight: 700; }
-        .stop-btn { background: var(--accent); border: none; color: white; padding: 10px 20px; border-radius: 50px; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: var(--transition); white-space: nowrap; }
-        .stop-btn:hover { background: var(--accent-light); }
+        @media (max-width: 360px) { #prevBtn { display: none; } }
 
-        @media (max-width: 480px) {
-            .now-playing { padding: 10px 12px; gap: 8px; }
-            .control-btn { width: 38px; height: 38px; font-size: 1rem; }
-            .volume-control { display: none; }
-            .stop-btn { padding: 8px 14px; font-size: 0.8rem; }
-            .now-playing-info .station-name { font-size: 0.85rem; }
-            .toast-container { left: 16px; right: 16px; }
-            .toast { min-width: unset; max-width: unset; width: 100%; }
+        .buffer-bar { position: fixed; left: 0; right: 0; bottom: calc(66px + var(--safe-b)); height: 3px; z-index: 1001; display: none; background: rgba(255,255,255,0.05); }
+        .buffer-bar.active { display: block; }
+        .buffer-bar-fill { height: 100%; width: 0; background: var(--accent); transition: width .3s; }
+        .buffer-bar-pulse { animation: live 1s infinite; }
+        .network-badge { position: fixed; right: 12px; bottom: calc(76px + var(--safe-b)); z-index: 1001; display: none; background: var(--bg-2); border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; font-size: 0.66rem; font-weight: 700; color: var(--text-3); }
+        .network-badge.active { display: block; }
+        .network-badge.slow { color: var(--gold); }
+        .network-badge.fast { color: var(--accent); }
+
+        /* ===== TOASTS ===== */
+        .toast-container { position: fixed; top: 70px; right: 16px; z-index: 10000; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+        .toast {
+            display: flex; align-items: center; gap: 12px; min-width: 280px; max-width: 380px; padding: 12px 14px 12px 16px;
+            background: var(--bg-2); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--radius-sm);
+            box-shadow: var(--shadow); transform: translateX(120%); opacity: 0; transition: all .35s var(--ease); pointer-events: auto;
         }
+        .toast.show { transform: none; opacity: 1; }
+        .toast.error { border-left-color: var(--danger); }
+        .toast-icon { font-size: 1.2rem; }
+        .toast-content { flex: 1; min-width: 0; }
+        .toast-title { font-size: 0.86rem; font-weight: 700; }
+        .toast-message { font-size: 0.78rem; color: var(--text-2); }
+        .toast-close { width: 26px; height: 26px; border-radius: 50%; border: none; background: transparent; color: var(--text-3); }
+        @media (max-width: 480px) { .toast-container { left: 12px; right: 12px; } .toast { min-width: 0; max-width: none; width: 100%; } }
 
         .back-to-top {
-            position: fixed; bottom: 100px; right: 16px; width: 48px; height: 48px;
-            border-radius: 50%; background: var(--accent); color: white; border: none;
-            font-size: 1.3rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
-            opacity: 0; transform: translateY(20px); transition: var(--transition); z-index: 200;
-            box-shadow: var(--shadow-md); pointer-events: none;
+            position: fixed; right: 16px; bottom: calc(96px + var(--safe-b)); width: 46px; height: 46px; border-radius: 50%;
+            border: 1px solid var(--line); background: var(--bg-2); font-size: 1.2rem; z-index: 200;
+            opacity: 0; transform: translateY(16px); pointer-events: none; transition: all .25s var(--ease); box-shadow: var(--shadow);
         }
-        .back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .back-to-top.visible { opacity: 1; transform: none; pointer-events: auto; }
 
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-primary); }
-        ::-webkit-scrollbar-thumb { background: var(--bg-card-hover); border-radius: 4px; }
+        .ptr-indicator {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 5000; display: flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 12px; font-size: 0.85rem; color: var(--text-2); background: var(--bg-2); border-bottom: 1px solid var(--line);
+            transform: translateY(-100%); transition: transform .2s; pointer-events: none;
+        }
+        .ptr-indicator.visible { transform: none; }
+
+        ::-webkit-scrollbar { width: 9px; height: 9px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: #262a3d; border-radius: 6px; }
     </style>
 </head>
 <body>
-    <!-- Toast Container -->
-    <div class="toast-container" id="toastContainer"></div>
+    <div class="toast-container" id="toastContainer" role="status" aria-live="polite"></div>
+    <div class="ptr-indicator" id="ptrIndicator"><span>Pull down to refresh</span></div>
 
-    <!-- Pull to Refresh Indicator -->
-    <div class="ptr-indicator" id="ptrIndicator">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 1V15M8 15L1 8M8 15L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span>Pull down to refresh</span>
-    </div>
+    <header class="top-bar">
+        <div class="wrap">
+            <a href="./" class="brand" aria-label="BioRadio home">
+                <svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="110" fill="#1a1d2e"/><g fill="none" stroke="#7ED321" stroke-width="30" stroke-linecap="round"><path d="M176 176a113 113 0 0 0 0 160"/><path d="M336 176a113 113 0 0 1 0 160"/><path d="M120 120a192 192 0 0 0 0 272" opacity=".55"/><path d="M392 120a192 192 0 0 1 0 272" opacity=".55"/></g><circle cx="256" cy="256" r="46" fill="#7ED321"/></svg>
+                <b>BioRadio</b>
+            </a>
+            <button class="install-btn" id="installTopBtn" aria-label="Download the BioRadio app">⬇ Get App</button>
+            <button class="icon-btn hamburger" id="hamburgerBtn" aria-label="Countries and search">☰</button>
+        </div>
+    </header>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <a href="#" style="display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
-            <img src="bioradio-logo.png" alt="BioRadio" style="height:36px;width:36px;border-radius:8px;object-fit:cover;">
-            <span style="font-weight:800;font-size:1.1rem;color:var(--accent);letter-spacing:-0.5px;">BioRadio</span>
-        </a>
-        <button class="install-btn" id="installTopBtn" aria-label="Download the BioRadio app">⬇ Get App</button>
-        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">☰</button>
-    </div>
-
-    <!-- Menu Overlay -->
     <div class="menu-overlay" id="menuOverlay"></div>
-
-    <!-- Side Menu -->
-    <nav class="side-menu" id="sideMenu">
+    <nav class="side-menu" id="sideMenu" aria-label="Countries">
         <div class="menu-header">
-            <h3>🌍 Countries</h3>
+            <h2>🌍 Countries</h2>
             <button class="menu-close" id="menuClose" aria-label="Close menu">✕</button>
         </div>
         <div class="menu-search-wrap">
             <input type="text" inputmode="search" enterkeyhint="search" class="menu-search" id="menuSearch" placeholder="Search country or radio…" autocomplete="off" aria-label="Search country or radio station">
             <button class="menu-search-clear" id="menuSearchClear" aria-label="Clear search">✕</button>
         </div>
-        <div class="menu-items">
-        </div>
+        <div class="menu-items"></div>
     </nav>
 
-    <div class="container">
-        <header>
-            <img src="bioradio-logo.svg" alt="BioRadio" width="96" height="96" style="width:96px;height:96px;border-radius:22px;margin-bottom:16px;box-shadow:0 8px 32px rgba(126,211,33,0.3);">
-            <h1 style="margin-top:0;">BioRadio</h1>
-            <p>Free English-Speaking Radio Stations Worldwide • Click any station to Play</p>
-        </header>
-
-        <div class="stats">
-            <div class="stat-box">
-                <div class="number">–</div>
-                <div class="label">Stations</div>
-            </div>
-            <div class="stat-box">
-                <div class="number">–</div>
-                <div class="label">Countries</div>
-            </div>
-        </div>
-
-        <div class="install-card" id="installCard">
-            <h2>📲 Download BioRadio</h2>
-            <p>Install the app on your Android phone or PC. It opens in one tap, works like a normal app and uses very little data.</p>
-            <button class="install-btn visible" id="installBtn">⬇ Download App</button>
-            <div class="install-help" id="installHelp"></div>
-            <label class="data-saver"><input type="checkbox" id="dataSaver"> Data saver (lower quality streams for 2G / slow networks)</label>
-        </div>
-
-        <div class="search-container">
+    <main class="wrap">
+        <section class="hero">
+            <!--HERO-->
+            <h1>Free live <span>English radio</span> from around the world</h1>
+            <p class="sub">Tap any station to listen. No sign-up, no fees, made for 2G, 3G and 4G.</p>
+            <!--/HERO-->
+            <div class="stats"><span class="stat"><span class="number">–</span> stations</span><span class="stat"><span class="number">–</span> countries</span><span class="stat">🔊 Live 24/7</span></div>
             <div class="search-box">
-                <input type="text" class="search-input" id="searchInput" placeholder="🔍 Search stations by name, genre, city, country..." autocomplete="off">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <label for="searchInput" class="sr-only">Search stations</label>
+                <input type="text" inputmode="search" enterkeyhint="search" class="search-input" id="searchInput" placeholder="Search station, country or genre…" autocomplete="off">
                 <button class="search-clear" id="searchClear" aria-label="Clear search">✕</button>
             </div>
             <div class="search-results-count" id="searchResults"></div>
+        </section>
+
+        <nav class="chips" id="countryChips" aria-label="Jump to country"></nav>
+
+        <div class="tools">
+            <div class="install-card" id="installCard">
+                <div class="txt"><b>📲 Get the BioRadio app</b>Android &amp; PC · one tap to open · uses little data</div>
+                <button class="install-btn" id="installBtn">⬇ Download</button>
+            </div>
+            <label class="data-saver"><input type="checkbox" id="dataSaver"><span class="switch" aria-hidden="true"></span>Data saver (2G)</label>
+            <div class="install-help" id="installHelp"></div>
         </div>
 
-        <div id="stationList"></div>
+        <section class="recent" id="recent" aria-label="Recently played">
+            <h2 class="section-title">Recently played</h2>
+            <div class="recent-row" id="recentRow"></div>
+        </section>
 
-        <div class="no-results" id="noResults" style="text-align:center;padding:60px 20px;color:var(--text-muted);display:none;">
-            <div style="font-size:3rem;margin-bottom:16px;opacity:0.5">📻</div>
-            <h3>No stations found</h3>
-            <p>Try a different search term</p>
-        </div>
-    </div>
+        <div id="stationList"><!--PRERENDER--><h2>Kenya radio stations</h2><ul><li>KBC English Service – News, Talk (95.6 FM)</li><li>Classic 105 – Classic Hits, Talk (105.2 FM)</li><li>Capital FM – Urban, Hip Hop, R&amp;B (98.4 FM)</li><li>NRG Radio – Hip Hop, Urban, R&amp;B (97.1 FM)</li><li>Radio Citizen – News, Talk, Music (106.7 FM)</li><li>Radio Jambo – Talk, Sports (97.5 FM)</li><li>East FM – Asian Music, Pop (106.5 FM)</li><li>Hot 96 FM – News, Talk (96.0 FM)</li><li>Homeboyz Radio – Hip Hop, Urban (103.5 FM)</li><li>Ramogi FM – Luo Music, Local (107.1 FM)</li><li>Mayienga FM – Dholuo, News, Culture (93.5 FM)</li><li>Jowi FM – Dholuo, News, Culture (98.2 FM)</li><li>Radio Wach Maber – Christian, Dholuo, Gospel (88.3 FM)</li><li>Ghetto Radio – Reggae, Dancehall, Hip Hop (89.5 FM)</li><li>Trace FM – Urban, Hip Hop, R&amp;B (95.3 FM)</li></ul><h2>Tanzania radio stations</h2><ul><li>Radio One Tanzania – News, Talk, African Music (89.7 FM)</li><li>East Africa Radio – Music, Entertainment (88.1 FM)</li><li>Capital Radio – News, Talk, Entertainment (88.6 FM)</li><li>Radio Uhai – Christian, Gospel (Online)</li><li>Mungu Kwanza Radio – Christian, Gospel (Online)</li><li>Radio Kwizera – Christian, Community (Online)</li><li>Heaven Radio – Christian, Gospel (Online)</li><li>Ishizwe FM – Community, Local (Online)</li><li>ImbaNasi Radio – Music, Entertainment (Online)</li></ul><h2>Uganda radio stations</h2><ul><li>BBC Radio Uganda 107.3 – News, Talk (107.3 FM)</li><li>Capital FM Uganda – Hits, Talk</li></ul><h2>South Africa radio stations</h2><ul><li>Talk Radio 702 – Talk, News (92.7 FM)</li><li>CapeTalk – Talk, News (567 AM)</li><li>5FM – Pop, Top 40 (98.0 FM)</li><li>Metro FM – Urban, R&amp;B (96.4 FM)</li><li>Kaya FM 95.9 – Jazz, Soul (95.9 FM)</li><li>Jacaranda FM – Hits, Pop, Adult Contemporary (94.2 FM)</li><li>East Coast Radio – Hits, Urban (94.0 FM)</li><li>947 FM – Hits, Pop, Rock (94.7 FM)</li><li>KFM 94.5 – Pop, Rock (94.5 FM)</li><li>Ukhozi FM – Zulu, African Music (90.8 FM)</li><li>Thobela FM – Pedi, Talk, Music (92.1 FM)</li><li>Lesedi FM – Sotho, Talk, Music (90.7 FM)</li><li>Hot 102.7 FM – Hits, Pop (102.7 FM)</li><li>Smile 90.4 FM – Pop, Hits (90.4 FM)</li><li>GrootFM – Afrikaans, Hits (90.5 FM)</li><li>Bok Radio – Afrikaans, Pop (98.9 FM)</li><li>Algoa FM – Hits, News (94.4 FM)</li><li>OFM – News, Music, Bloemfontein (94.0 FM)</li><li>Jozi FM – Community, Regional (105.8 FM)</li><li>Power 98.7 – News, Talk, Business (98.7 FM)</li><li>Radio 2000 – Music, Sports, Talk (99.7 FM)</li><li>Munghana Lonene FM – Tsonga, Music (89.4 FM)</li><li>Radio Sonder Grense – Afrikaans, Talk (100.6 FM)</li><li>Capricorn FM – Music, News, Limpopo (98.7 FM)</li></ul><h2>Nigeria radio stations</h2><ul><li>Nigeria Info FM – News, Talk, Sports (99.3 FM)</li><li>Beat FM Lagos – Pop, Hip Hop (99.9 FM)</li></ul><h2>Ghana radio stations</h2><ul><li>Joy FM – Entertainment, News</li><li>Citi FM – Business, Entertainment</li><li>Skyy Power FM – Music, News</li><li>Ghana Music Radio – Music</li><li>Oroko Radio – Alternative, Community Radio</li><li>GBC Uniiq FM – News, Music (95.7 FM)</li></ul><h2>DR Congo radio stations</h2><ul><li>Rumba Radio – Congolese Rumba, Soukous (Online)</li><li>Radio Mix Congolaise – Congolese Rumba, Soukous, 24/7 (Online)</li><li>Radio Okapi – News, Talk, Music, Kinshasa (103.5 FM)</li><li>Beroya FM – Christian, Gospel, Music (Online)</li><li>Jabulani Radio – Congolese Rumba, Soukous, African Hits (Online)</li></ul><h2>Zambia radio stations</h2><ul><li>Hot FM Zambia – African Music, Zambian Music (87.7 FM)</li><li>KNC Radio – News, Talk</li><li>Christian Nation FM 106.5 – Christian, Gospel (106.5 FM)</li><li>Q FM Zambia – News, Pop</li><li>Metro 94.5 FM Zambia – 90S, News (94.5 FM)</li></ul><h2>Zimbabwe radio stations</h2><ul><li>Capitalk FM Harare – African Music (100.4 FM)</li><li>Power FM Zimbabwe – African Music, Dancehall</li><li>ZiFM Stereo – News, Talk</li><li>Star FM – News, Talk</li><li>National FM (ZBC) – News, Talk</li><li>Diamond FM – News, Talk</li><li>Hevoi FM – News, Talk</li><li>Classic 263 – News, Sports</li></ul><h2>Namibia radio stations</h2><ul><li>Kosmos 94.1 – Community, Entertainment (94.1 FM)</li><li>Fresh FM – Hiphop, House</li><li>Radiowave FM – Classic Hits, Hits</li><li>Eagle FM – Hits, Music</li><li>Nova 103.5 – 80S, 90S (103.5 FM)</li></ul><h2>Malawi radio stations</h2><ul><li>ZBS Zodiak FM – Entertainment, Local Music</li><li>C.Y.A.M.A Radio Malawi – Christian, News</li><li>Power 101 digital – Education, News</li></ul><h2>United States radio stations</h2><ul><li>NPR News – News, Talk</li><li>CNN Radio – News, Talk</li><li>MSNBC Radio – News, Talk, Progressive</li><li>FOX News Radio – News, Talk</li><li>BBC World Service (US) – News, Talk</li><li>WABC Talk Radio – Talk, News (770 AM)</li><li>WGN Radio – Talk, Sports (720 AM)</li><li>KOST 103.5 – Adult Contemporary (103.5 FM)</li><li>KISS FM Los Angeles – Pop, Top 40 (102.7 FM)</li><li>WBZ NewsRadio – News, Talk (98.5 FM)</li><li>ESPN Radio – Sports</li><li>Bloomberg Radio – Business, News, Talk</li><li>101 Smooth Jazz – Jazz, Smooth Jazz</li></ul><h2>Canada radio stations</h2><ul><li>CBC Radio One Toronto – News, Talk (99.1 FM)</li><li>CBC Radio One Vancouver – News, Talk (88.1 FM / 690 AM)</li><li>CBC Radio One Ottawa – News, Talk (91.5 FM)</li><li>CBC Music Toronto – Music, Adult Contemporary (94.1 FM)</li><li>CFRB Newstalk 1010 – Talk, News (1010 AM)</li><li>CKNW News Talk 980 – News, Talk (980 AM)</li><li>CJAD 800 Montreal – Talk, News (800 AM)</li></ul><h2>Jamaica radio stations</h2><ul><li>Radio Jamaica 94 FM – News, Talk, Music (94 FM)</li><li>FAME 95 FM – Urban, Pop (95 FM)</li><li>Hitz 92 FM – Reggae, Dancehall (92 FM)</li><li>TBN Reggae Radio – Reggae, Dancehall</li><li>SunCity 104.9 FM – Reggae, Dancehall, Hip Hop (104.9 FM)</li><li>Island Buzz Radio – Reggae, Dancehall, Soca, Afro Beat</li><li>Sensimedia Dancehall Radio – Dancehall, Reggae</li><li>Dancehall Radio – Dancehall, Reggae, Street Anthems</li></ul><h2>Trinidad and Tobago radio stations</h2><ul><li>Scorch Radio 101.1FM – Soca, Various (101.1 FM)</li><li>Slam 100.5 – Music, Urban (100.5 FM)</li><li>Hot 93.5 FM – Top 40, Hits (93.5 FM)</li><li>Radio Tambrin – Caribbean Music, Local News (92.7 FM)</li><li>Smash Radio – Caribbean, Dancehall</li><li>Woods Hit Radio – 70 80 Hits, Adult Contemporary</li></ul><h2>Barbados radio stations</h2><ul><li>VOB 92.9 FM – Call-In, Calypso (92.9 FM)</li><li>HOTT 95.3FM – Reggae (95.3 FM)</li><li>Radio Bimshire 106.1 FM – Various (106.1 FM)</li><li>The Beat 104.1 FM – Adult Contemporary, Music (104.1 FM)</li><li>LIFE 97.5 FM – Gospel (97.5 FM)</li></ul><h2>Bahamas radio stations</h2><ul><li>Bahamian or Nuttin 92.5 – Junkanoo, Caribbean (92.5 FM)</li><li>103 The Beat – Pop</li></ul><h2>United Kingdom radio stations</h2><ul><li>BBC Radio 1 – Pop, Top 40 (97-99 FM)</li><li>BBC Radio 2 – Adult Contemporary, Pop (88-91 FM)</li><li>BBC Radio 3 – Classical, Jazz (90-93 FM)</li><li>BBC Radio 4 – News, Talk, Drama (92-95 FM / 198 LW)</li><li>BBC Radio 5 Live – News, Sports (909/693 MW)</li><li>BBC Radio 6 Music – Alternative, Indie (DAB)</li><li>LBC 97.3 – Talk, News (97.3 FM)</li><li>talkSPORT – Sports, Talk (1053/1089 MW / DAB)</li><li>Classic FM – Classical (100-102 FM)</li><li>Times Radio – News, Talk (DAB)</li><li>Virgin Radio UK – Rock, Pop (DAB)</li><li>Absolute Radio – Classic Rock (1215 MW / DAB)</li><li>Heart London – Adult Contemporary, Pop (106.2 FM)</li><li>Capital FM London – Pop, Top 40 (95.8 FM)</li></ul><h2>Ireland radio stations</h2><ul><li>RT&#201; Radio 1 – News, Talk (88-90 FM)</li><li>Newstalk 106-108 – Talk, News (106-108 FM)</li><li>Today FM – Music, Talk (100-104 FM)</li><li>RT&#201; 2FM – Pop, Music (90-92 FM)</li><li>Classic Hits Radio – Classic Hits (94-99 FM)</li></ul><h2>Germany radio stations</h2><ul><li>bigFM Radio – Pop, Top 40, Hip Hop</li><li>defjay – R&amp;B, Hip Hop, Urban</li></ul><h2>Philippines radio stations</h2><ul><li>Easy Rock 96.3 – Rock (96.3 FM)</li><li>99.5 Kool FM – Adult Contemporary, News (99.5 FM)</li><li>Star FM 102.7 Manila – Information, News (102.7 FM)</li><li>Star FM 95.5 Cebu – Music, News (95.5 FM)</li><li>Smooth Radio 105.5 – Jazz, Latin (105.5 FM)</li></ul><h2>Malaysia radio stations</h2><ul><li>RED FM – Adult Contemporary, Classic Hits</li><li>HITZ – Music, Talk</li><li>LITE FM – 1960S, 1970S</li><li>Fly FM – Music, Talk</li><li>Traxx FM – Music, Talk</li><li>Sabah VFM 92.7 – Community, Hits (92.7 FM)</li><li>Cats FM – Music, Talk</li></ul><h2>Singapore radio stations</h2><ul><li>CNA 938 – News, Talk (93.8 FM)</li><li>Class 95 – Adult Contemporary (95.0 FM)</li><li>987FM – Pop, Top 40 (98.7 FM)</li><li>Kiss 92 – Adult Contemporary, Pop (92.0 FM)</li></ul><h2>Hong Kong radio stations</h2><ul><li>Radio Lantau – Classic Rock, Community</li><li>AXR Hong Kong – News, Sport</li></ul><h2>Australia radio stations</h2><ul><li>ABC News Radio – News</li><li>ABC Radio National – News, Talk, Culture</li><li>ABC Sydney – News, Talk (702 AM)</li><li>2GB Sydney – Talk, News (873 AM)</li><li>KIIS 106.5 Sydney – Pop, Top 40, CHR (106.5 FM)</li><li>3AW Melbourne – Talk, News (693 AM)</li><li>ABC Melbourne – News, Talk (774 AM)</li><li>6PR Perth – Talk, News (882 AM)</li></ul><h2>New Zealand radio stations</h2><ul><li>RNZ National – News, Talk</li><li>Newstalk ZB Auckland – News, Talk, Sports (89.4 FM)</li><li>The Edge – Pop, Top 40 (94.2 FM)</li><li>The Rock FM – Rock, Alternative (90.2 FM)</li><li>ZM – Pop, Top 40 (91.0 FM)</li></ul><h2>Fiji radio stations</h2><ul><li>FM96 Fiji – Culture, Variety</li><li>Legend FM – Adult Contemporary, Classic Hits</li><li>Gold FM – Contemporary Hits, Pop</li><li>Life FM – Christian, Christmas Music</li><li>2Day FM Fiji – Contemporary Hits, Pop</li></ul><!--/PRERENDER--></div>
 
-    <!-- Buffer Progress Bar -->
-    <div class="buffer-bar" id="bufferBar">
-        <div class="buffer-bar-fill buffer-bar-pulse" id="bufferBarFill"></div>
-    </div>
+        <div class="no-results" id="noResults"><div>📻</div><h3>No stations found</h3><p>Try another name, country or genre</p></div>
 
-    <!-- Network Badge -->
+        <footer>
+            <!--ABOUT-->
+            <h2>About BioRadio</h2>
+            <p>BioRadio lets you listen to free live English-speaking radio from Africa, the Americas, Europe, Asia and Oceania — news, talk, sport, gospel, hip hop, reggae, afrobeats, pop and more. Every stream is checked before it is listed, and the app is built to load fast and keep playing on 2G, 3G and 4G networks.</p>
+            <!--/ABOUT-->
+            <h2>Radio stations by country</h2>
+            <div class="country-links" id="countryLinks"><!--COUNTRYLINKS--><a href="kenya/">Kenya radio</a><a href="tanzania/">Tanzania radio</a><a href="uganda/">Uganda radio</a><a href="south-africa/">South Africa radio</a><a href="nigeria/">Nigeria radio</a><a href="ghana/">Ghana radio</a><a href="dr-congo/">DR Congo radio</a><a href="zambia/">Zambia radio</a><a href="zimbabwe/">Zimbabwe radio</a><a href="namibia/">Namibia radio</a><a href="malawi/">Malawi radio</a><a href="united-states/">United States radio</a><a href="canada/">Canada radio</a><a href="jamaica/">Jamaica radio</a><a href="trinidad-and-tobago/">Trinidad and Tobago radio</a><a href="barbados/">Barbados radio</a><a href="bahamas/">Bahamas radio</a><a href="united-kingdom/">United Kingdom radio</a><a href="ireland/">Ireland radio</a><a href="germany/">Germany radio</a><a href="philippines/">Philippines radio</a><a href="malaysia/">Malaysia radio</a><a href="singapore/">Singapore radio</a><a href="hong-kong/">Hong Kong radio</a><a href="australia/">Australia radio</a><a href="new-zealand/">New Zealand radio</a><a href="fiji/">Fiji radio</a><!--/COUNTRYLINKS--></div>
+            <p>© BioRadio · Streams are provided by the radio stations themselves.</p>
+        </footer>
+    </main>
+
+    <div class="buffer-bar" id="bufferBar"><div class="buffer-bar-fill buffer-bar-pulse" id="bufferBarFill"></div></div>
     <div class="network-badge" id="networkBadge"></div>
 
-    <!-- Now Playing Bar -->
-    <div class="now-playing" id="nowPlaying">
-        <div class="now-playing-info">
-            <div class="station-name" id="nowPlayingStation">Select a station</div>
-            <div class="country" id="nowPlayingCountry">Click play to start listening</div>
-        </div>
-        <div class="player-controls">
-            <button class="control-btn" id="prevBtn" title="Previous">⏮</button>
-            <button class="control-btn" id="muteBtn" title="Mute">🔊</button>
-            <div class="volume-control">
-                <button class="volume-btn" id="volDownBtn">−</button>
-                <span class="volume-display" id="volumeDisplay">80%</span>
-                <button class="volume-btn" id="volUpBtn">+</button>
+    <div class="now-playing" id="nowPlaying" aria-label="Now playing">
+        <div class="now-playing-inner">
+            <img class="np-logo" id="npLogo" alt="" width="46" height="46">
+            <div class="now-playing-info">
+                <div class="station-name" id="nowPlayingStation">Select a station</div>
+                <div class="country" id="nowPlayingCountry">Live</div>
             </div>
-            <button class="control-btn" id="nextBtn" title="Next">⏭</button>
-            <button class="stop-btn" id="stopBtn">⏹ Stop</button>
+            <div class="player-controls">
+                <button class="control-btn" id="prevBtn" aria-label="Previous station">⏮</button>
+                <button class="control-btn" id="muteBtn" aria-label="Mute">🔊</button>
+                <div class="volume-control">
+                    <button class="volume-btn" id="volDownBtn" aria-label="Volume down">−</button>
+                    <span class="volume-display" id="volumeDisplay">80%</span>
+                    <button class="volume-btn" id="volUpBtn" aria-label="Volume up">+</button>
+                </div>
+                <button class="control-btn" id="nextBtn" aria-label="Next station">⏭</button>
+                <button class="stop-btn" id="stopBtn">■ Stop</button>
+            </div>
         </div>
     </div>
 
@@ -610,7 +558,7 @@
             return (words.length > 1 ? words[0][0] + words[1][0] : (words[0] || '?').slice(0, 2)).toUpperCase();
         }
         function logoFallback(el) {
-            const box = el.parentElement, name = box.closest('.station-card').dataset.name;
+            const box = el.parentElement, holder = box.closest('[data-name]'), name = holder ? holder.dataset.name : '?';
             let h = 0; for (const ch of name) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
             box.classList.add('initials');
             box.style.background = LOGO_COLORS[h % LOGO_COLORS.length];
@@ -642,25 +590,40 @@
                    '<span>' + (label || esc(group.c)) + '</span><span class="menu-count">' + group.s.length + '</span></a>';
         }
 
+        // On a country page (e.g. /kenya/) that country is listed first.
+        const FOCUS_COUNTRY = window.BIORADIO_FOCUS || null;
+        if (FOCUS_COUNTRY) {
+            const i = STATION_DATA.findIndex(g => g.c === FOCUS_COUNTRY);
+            if (i > 0) STATION_DATA.unshift(STATION_DATA.splice(i, 1)[0]);
+        }
+
+        function logoHTML(name, logo, size, eager) {
+            return '<div class="station-logo">' + (logo
+                ? '<img src="logos/' + esc(logo) + '" alt="' + esc(name) + ' logo" width="' + size + '" height="' + size + '"' + (eager ? '' : ' loading="lazy"') + ' decoding="async" onerror="logoFallback(this)">'
+                : '<img alt="" width="' + size + '" height="' + size + '" src="data:," onerror="logoFallback(this)">') + '</div>';
+        }
+
         function renderStations() {
-            let html = '';
+            let html = '', chips = '', links = '', n = 0;
             for (const group of STATION_DATA) {
                 const id = slugify(group.c);
-                html += '<div class="country-section" id="' + id + '"><div class="country-header">' + flagImg(group.cc, group.c, 48, 36) +
-                        '<h3>' + esc(group.c) + '</h3><span class="count"></span></div><div class="stations-grid">';
+                chips += '<a class="chip" href="#' + id + '" onclick="return goToCountry(this)"><img src="flags/' + group.cc.toLowerCase() + '.png" alt="" width="28" height="21">' + esc(group.c) + '</a>';
+                links += '<a href="' + id + '/">' + esc(group.c) + ' radio</a>';
+                html += '<section class="country-section" id="' + id + '" aria-label="' + esc(group.c) + ' radio stations"><div class="country-header">' +
+                        flagImg(group.cc, group.c, 44, 33) + '<h2>' + esc(group.c) + '</h2><span class="count"></span></div><div class="stations-grid">';
                 for (const [name, genre, freq, url, logo, low] of group.s) {
                     html += '<div class="station-card" data-url="' + esc(url) + '"' + (low ? ' data-low="' + esc(low) + '"' : '') +
                             ' data-name="' + esc(name) + '" data-country="' + esc(group.c) + '"' + (logo ? ' data-logo="logos/' + esc(logo) + '"' : '') + '>' +
-                            '<button class="play-btn" aria-label="Play ' + esc(name) + '">▶</button>' +
-                            '<div class="station-logo">' + (logo
-                                ? '<img src="logos/' + esc(logo) + '" alt="" width="48" height="48" loading="lazy" decoding="async" onerror="logoFallback(this)">'
-                                : '<img alt="" width="48" height="48" src="data:," onerror="logoFallback(this)">') + '</div>' +
-                            '<div class="station-info"><h4>' + esc(name) + '</h4><div class="genre">' + esc(genre) + '</div>' +
-                            (freq ? '<div class="freq">' + esc(freq) + '</div>' : '') + '</div></div>';
+                            logoHTML(name, logo, 52, n++ < 6) +
+                            '<div class="station-info"><h3>' + esc(name) + '</h3><div class="meta">' +
+                            (freq ? '<span class="freq">' + esc(freq) + '</span>' : '') + '<span class="genre">' + esc(genre) + '</span></div></div>' +
+                            '<button class="play-btn" aria-label="Play ' + esc(name) + '">▶</button></div>';
                 }
-                html += '</div></div>';
+                html += '</div></section>';
             }
             document.getElementById('stationList').innerHTML = html;
+            document.getElementById('countryChips').innerHTML = chips;
+            document.getElementById('countryLinks').innerHTML = links;
             renderMenu('');
         }
 
@@ -741,7 +704,7 @@
         const installHelp = document.getElementById('installHelp');
         let deferredInstall = null;
         const isStandalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
-        if (isStandalone) installCard.classList.add('installed');
+        if (isStandalone) { installCard.classList.add('installed'); installTopBtn.style.display = 'none'; }
 
         window.addEventListener('beforeinstallprompt', e => {
             e.preventDefault();
@@ -751,7 +714,7 @@
         window.addEventListener('appinstalled', () => {
             deferredInstall = null;
             installCard.classList.add('installed');
-            installTopBtn.classList.remove('visible');
+            installTopBtn.style.display = 'none';
             showToast('Installed!', 'BioRadio is now on your home screen / desktop.', 'success');
         });
         function installInstructions() {
@@ -803,13 +766,36 @@
                 const el = sec.querySelector('.country-header .count');
                 if (el) el.textContent = n + ' station' + (n !== 1 ? 's' : '');
             });
-            const nums = document.querySelectorAll('.stats .stat-box .number');
+            const nums = document.querySelectorAll('.stats .number');
             if (nums[0]) nums[0].textContent = total;
             if (nums[1]) nums[1].textContent = sections.length;
-            const tagline = document.querySelector('header p');
-            if (tagline) tagline.textContent = total + ' Free English-Speaking Radio Stations Worldwide • Click any station to Play';
-            document.title = 'BioRadio - ' + total + ' Stations';
+            // (page <title> is set in the HTML for search engines; not changed here)
         })();
+
+        // ===== RECENTLY PLAYED + NOW-PLAYING LOGO =====
+        const recentEl = document.getElementById('recent'), recentRow = document.getElementById('recentRow');
+        const npLogo = document.getElementById('npLogo');
+        function loadRecent() { try { return JSON.parse(localStorage.getItem('bioradio-recent') || '[]'); } catch (e) { return []; } }
+        function renderRecent() {
+            const cards = loadRecent().map(r => allStations.find(s => s.name === r.n && s.country === r.c)).filter(Boolean).slice(0, 8);
+            recentEl.classList.toggle('visible', cards.length > 0);
+            recentRow.innerHTML = cards.map(s => {
+                const logo = s.element.dataset.logo ? s.element.dataset.logo.replace('logos/', '') : null;
+                return '<button class="recent-item" data-name="' + esc(s.name) + '" data-country="' + esc(s.country) + '">' + logoHTML(s.name, logo, 52, true) + '<span>' + esc(s.name) + '</span></button>';
+            }).join('');
+        }
+        recentRow.addEventListener('click', e => { const b = e.target.closest('.recent-item'); if (b) playFromMenu(b); });
+        function onStationPlaying(card) {
+            if (!card) return;
+            const logo = card.dataset.logo;
+            npLogo.classList.toggle('visible', !!logo);
+            if (logo) npLogo.src = logo;
+            const list = loadRecent().filter(r => !(r.n === card.dataset.name && r.c === card.dataset.country));
+            list.unshift({ n: card.dataset.name, c: card.dataset.country });
+            try { localStorage.setItem('bioradio-recent', JSON.stringify(list.slice(0, 8))); } catch (e) {}
+            renderRecent();
+        }
+        renderRecent();
 
         // ===== SEARCH =====
         function filterStations(query) {
@@ -1044,6 +1030,7 @@
                 currentPlayingCard = card;
                 if (slow) { try { audio.preload = 'auto'; } catch(e) {} }
                 updateMediaSession(name, country, 'playing');
+                onStationPlaying(card);
             }
 
             function onFailure(reason) {
@@ -1313,10 +1300,6 @@
             }
         });
 
-        // Welcome toast
-        setTimeout(() => {
-            showToast('Welcome!', 'Click any station to start listening. Use ⏮ ⏭ to skip between stations.', 'success');
-        }, 1500);
 
         // Register service worker for PWA
         if ('serviceWorker' in navigator) {

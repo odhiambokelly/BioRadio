@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://odhiambokelly.github.io/BioRadio/sitemap.xml

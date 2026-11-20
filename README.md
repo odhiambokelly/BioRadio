@@ -25,6 +25,19 @@ The **⬇ Download App** button installs BioRadio like a normal app:
 - HLS (`.m3u8`) streams adapt their quality to the connection. Browsers without built-in HLS load [hls.js](https://github.com/video-dev/hls.js) only when needed.
 - Up to 10 automatic retries on weak connections, and quick skipping of stations that are offline.
 
+## Search engines (Google, Bing)
+
+- Every country has its own page, such as `kenya/`, `ghana/` or `united-kingdom/`, with its own title, description and structured data (schema.org `RadioStation` list). Each page lists its stations in plain HTML, so search engines can read them without running JavaScript.
+- `sitemap.xml` lists the home page and all country pages. Share previews on WhatsApp, Facebook and X use `og-image.png`.
+- **To get indexed:** add the site in [Google Search Console](https://search.google.com/search-console) as a *URL prefix* property (`https://odhiambokelly.github.io/BioRadio/`). Verify it with the HTML-tag method by pasting the tag into the `<head>` of `index.html`, then submit `sitemap.xml`. Do the same in [Bing Webmaster Tools](https://www.bing.com/webmasters).
+- A custom domain (for example `bioradio.co.ke`) usually ranks better than a `github.io` address. GitHub Pages supports one under Settings → Pages.
+
+**After changing stations,** rebuild the country pages and sitemap:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools\build-pages.ps1
+```
+
 ## Files
 
 | File | What it is |
