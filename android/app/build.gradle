@@ -1,0 +1,46 @@
+plugins {
+    id 'com.android.application'
+}
+
+// Version code comes from the GitHub Actions run number, so every build can update the previous one.
+def buildNumber = project.hasProperty('versionCode') ? project.property('versionCode').toString().toInteger() : 1
+
+android {
+    namespace 'io.github.odhiambokelly.bioradio'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'io.github.odhiambokelly.bioradio'
+        minSdk 21
+        targetSdk 34
+        versionCode buildNumber
+        versionName "1.0.${buildNumber}"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(System.getenv('KEYSTORE_FILE') ?: 'release.keystore')
+            storePassword System.getenv('KEYSTORE_PASSWORD')
+            keyAlias System.getenv('KEY_ALIAS') ?: 'bioradio'
+            keyPassword System.getenv('KEY_PASSWORD') ?: System.getenv('KEYSTORE_PASSWORD')
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    // Google's Trusted Web Activity helper: opens the site full-screen in Chrome,
+    // with background audio and lock-screen controls. Falls back to a WebView if Chrome is missing.
+    implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.5.0'
+}
