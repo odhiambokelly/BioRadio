@@ -1,14 +1,19 @@
 {
-  "name": "BioRadio",
+  "id": "./",
+  "name": "BioRadio - Live English Radio",
   "short_name": "BioRadio",
-  "description": "Free English-speaking radio stations from around the world",
+  "description": "Free English-speaking radio stations from around the world. Works on 2G, 3G and 4G.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#0f0f1a",
   "theme_color": "#1a1a2e",
+  "categories": ["music", "news", "entertainment"],
   "icons": [
+    { "src": "bioradio-logo-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
     { "src": "bioradio-logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "bioradio-logo.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
     { "src": "bioradio-logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ]
 }
