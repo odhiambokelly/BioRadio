@@ -2,12 +2,13 @@
 // - App shell: network first (so updates show), cache fallback (so it opens on bad / no network)
 // - Station logos: cache first (they rarely change; saves data on 2G/3G)
 // - Audio streams and other sites: never touched
-const CACHE = 'bioradio-v3';
+const CACHE = 'bioradio-v4';
 const LOGO_CACHE = 'bioradio-logos-v1';
 const SHELL = ['./', './index.html', './manifest.json', './bioradio-logo.png', './bioradio-logo-192.png', './bioradio-logo.svg'];
+const FLAGS = ['ke','tz','ug','za','ng','gh','cd','zm','zw','na','mw','us','ca','jm','tt','bb','bs','gb','ie','de','ph','my','sg','hk','au','nz','fj'].map(c => './flags/' + c + '.png');
 
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  event.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL.concat(FLAGS))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', event => {
